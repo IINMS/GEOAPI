@@ -1,0 +1,6 @@
+ {
+
+
+"duct_csection": { "FieldType": "numberfield", "AllowBlank": false },
+"duct_depth": { "FieldType": "numberfield", "AllowBlank": false }
+}

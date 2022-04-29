@@ -1,0 +1,11 @@
+{
+    
+    "databases": {
+        "Forms": {
+             "path":"postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage2Forms"
+        },
+        "Geo": {
+           "path":"postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage2"
+        }
+    }
+}

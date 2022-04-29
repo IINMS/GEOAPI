@@ -1,0 +1,87 @@
+{
+    "working_team_code": {
+        "FieldType": "00_Mytextfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "working_team_type": {
+        "FieldType": "04_combo",
+        "displayField":"type",
+        "Data":{
+            "allowBlank": false
+      
+      
+        },
+        "datastore":{
+            "fields": ["type"],
+           "data":[
+           
+             {"type": ""},
+             {"type": ""},
+             {"type": ""}
+         
+           ]
+          
+        }
+       
+    },
+  "working_team_genre": {
+    "FieldType": "04_combo",
+    "displayField":"genre",
+
+    "Data":{
+      "allowBlank": false
+
+
+  },
+
+  "datastore":{
+    "fields": ["genre"],
+   "data":[
+   
+     {"genre": ""},
+     {"genre": ""},
+     {"genre": ""},
+     {"genre": ""}
+
+   ]
+  
+}
+
+},
+"working_team_filter": {
+  "FieldType": "00_Mytextfield",
+
+  "Data": {
+      "allowBlank": true,
+      "fieldLabel": "Φίλτρο",
+      "rule_listeners" : {
+        "change" :"myFilter"
+      } 
+
+  }
+},
+"select_workers": {
+  "FieldType": "05_ItemSelector",
+
+  "Data": {
+    "displayField": "Name",
+    "valueField": "Occupation",
+    "selected":""
+  },
+
+ 
+  "datastore":{
+    "fields": ["Name","Occupation"]
+    
+
+ 
+
+   
+  
+}
+}
+
+ 
+}

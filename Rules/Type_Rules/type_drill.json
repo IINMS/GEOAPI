@@ -1,0 +1,44 @@
+{
+    "dril_depth": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "drill_rel_sensors": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "drill_rel_sensors_ID": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "drill_rel_sens_lvl": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "drill_capacity": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "dril_rel_motor": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "dril_rel_motor_ID": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+	"filefield": {
+		"xtype": "fieldcontainer",
+		"layout": "hbox",
+		"defaultType": "filefield",
+		 "fieldDefaults": {
+			"labelWidth": "59%",
+			"width":"70%"
+			 
+        },
+		"items": [
+			{
+				"xtype": "filefield",
+				 
+				"msgTarget": "none",
+			
+			 
+				"buttonText": "..."
+			} 
+		]
+	}
+}

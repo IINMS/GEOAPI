@@ -1,0 +1,61 @@
+{
+     
+  "Task_comment": {
+    "FieldType": "00_textarea",
+     
+    "Data":{
+      "allowBlank": true
+
+
+  }
+  },
+ 
+  "Task_result": {
+    "FieldType": "04_combo",
+    "displayField":"type",
+    "Data":{
+        "allowBlank": false,
+        "width":"90%"
+  
+  
+    },
+    "datastore":{
+        "fields": ["type"],
+       "data":[
+       
+         {"type": ""},
+         {"type": ""},
+         {"type": ""}
+     
+       ]
+      
+    }
+   
+},
+"Task_not_completed_comment": {
+  "FieldType": "00_textarea",
+   
+  "Data":{
+    "allowBlank": true
+
+
+}
+},
+"Task_file_path": {
+  "FieldType": "11_filefield",
+  "Data": {
+      "allowBlank": true
+  }
+},
+
+ 
+"Task_repeat": {
+    "FieldType": "03_checkboxfield",
+    "Data":{
+        "allowBlank": true
+
+
+    }
+}
+
+}

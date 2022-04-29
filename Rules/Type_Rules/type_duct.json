@@ -1,0 +1,20 @@
+{
+  "duct_csection": {
+    "FieldType": "02_numberfield",
+    
+    "Data":{
+      "allowBlank": true
+
+
+  }
+  },
+  "duct_depth": {
+    "FieldType": "02_numberfield",
+     
+    "Data":{
+      "allowBlank": true
+
+
+  }
+  }
+}
