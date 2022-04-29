@@ -1,0 +1,35 @@
+{
+    "checkboxfield": {
+        "xtype": "fieldcontainer",
+        "defaultType": "checkboxfield",
+        "fieldDefaults": {
+			
+			"labelWidth":"60%"
+			 
+        },
+        "items": [
+            {
+                "labelAlign": "right"
+               
+               
+                 
+            }
+        ]
+    },
+    "radiofield": {
+        "xtype": "fieldcontainer",
+        "defaultType": "radiofield",
+        "fieldDefaults": {
+			
+			"width":"70%"
+			 
+        },
+        "items": [
+            {
+                "labelAlign": "right"
+              
+                
+            }
+        ]
+    }
+}

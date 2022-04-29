@@ -1,0 +1,22 @@
+{
+    "Mytextfield": {
+        "xtype": "textfield"
+
+
+    },
+    "textfield": {
+        "xtype": "textfield",
+      
+        "width":"90%"
+
+    },
+     "textarea" : 
+    { 
+   "xtype"     : "textareafield",
+   "grow"      : false,
+   "width":"90%"
+
+   
+}
+
+}

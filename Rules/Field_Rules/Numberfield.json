@@ -1,0 +1,19 @@
+{
+    "numberfield": {
+        "xtype": "numberfield",
+        "maxValue": 99,
+        "minValue": 0,
+        "width":"90%"
+
+    },
+    "numberfieldFloat": {
+        "xtype": "numberfield",
+        "maxValue": 99,
+        "minValue": 0,
+        "hideTrigger": true,
+        "keyNavEnabled": false,
+        "mouseWheelEnabled": false,
+        "width":"90%"
+
+    }
+}

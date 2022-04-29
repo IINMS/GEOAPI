@@ -1,0 +1,49 @@
+{
+    "pers_name": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": false
+        }
+    },
+    "pers_surname": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": false
+        }
+    },
+  "pers_specialization": {
+    "FieldType": "00_textfield",
+     
+    "Data":{
+      "allowBlank": false
+
+
+  }
+  },
+  "pers_code": {
+    "FieldType": "00_textfield",
+     
+    "Data":{
+      "allowBlank": true
+
+
+  }
+  },
+  "pers_AMKA": {
+    "FieldType": "00_textfield",
+     
+    "Data":{
+      "allowBlank": true
+
+
+  }
+  },
+   "pers_hire_date": {
+    "FieldType": "01_datefield",
+    "Data": {
+        "allowBlank": false
+    }
+}
+ 
+ 
+}

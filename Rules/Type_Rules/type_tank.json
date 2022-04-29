@@ -1,0 +1,61 @@
+{
+    
+    "tank_type": {
+        "FieldType": "03_checkboxfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "tank_capacity": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+      "tank_length": {
+        "FieldType": "02_numberfieldFloat",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "tank_width": {
+        "FieldType": "02_numberfieldFloat",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "tank_height": {
+        "FieldType": "02_numberfieldFloat",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "tank_wall_thick": {
+        "FieldType": "02_numberfieldFloat",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "tank_rel_sensors": {
+        "FieldType": "03_checkboxfield",
+        "allowBlank": true
+    },
+    "tank_rel_sensors_ID": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "tank_sens_lvl": {
+        "FieldType": "02_numberfieldFloat",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "tank_rel_FID_alt": {
+        "FieldType": "02_numberfieldFloat",
+        "Data": {
+            "allowBlank": true
+        }
+    }
+}

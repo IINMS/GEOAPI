@@ -1,0 +1,20 @@
+{
+  "evac_type": {
+    "FieldType": "02_numberfield",
+  
+    "Data":{
+      "allowBlank": true
+
+
+  }
+  },
+  "evac_type_id": {
+    "FieldType": "00_textfield",
+     
+    "Data":{
+      "allowBlank": true
+
+
+  }
+  }
+}
