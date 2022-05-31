@@ -1,0 +1,71 @@
+{
+    "vane_csection": {
+        "FieldType": "02_numberfield",
+       
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    },
+    "vane_pmax": {
+        "FieldType": "02_numberfield",
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    },
+    "vane_tmax": {
+        "FieldType": "02_numberfield",
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    },
+    "vane_thread": {
+        "FieldType": "02_numberfield",
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    },
+    "vane_flange": {
+        "FieldType": "02_numberfield",
+        "allowBlank": true
+    },
+    "vane_screw": {
+        "FieldType": "00_textfield",
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    },
+    "vane_cousine": {
+        "FieldType": "00_textfield",
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    },
+    "vane_block": {
+        "FieldType": "00_textfield",
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    },
+    "vane_pos_mark": {
+        "FieldType": "03_checkboxfield",
+        "Data":{
+            "allowBlank": true
+
+
+        }
+    }
+}

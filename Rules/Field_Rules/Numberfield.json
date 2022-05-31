@@ -1,0 +1,8 @@
+{
+    "numberfield": {
+        "xtype": "numberfield",
+        "maxValue": 99,
+        "minValue": 0
+        
+    }
+}

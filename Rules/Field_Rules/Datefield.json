@@ -1,0 +1,13 @@
+{
+     
+    "datefield": {
+        
+        
+			"xtype": "datefield",
+			
+ 
+			"format": "Y-m-d H:i:s P"
+		 
+	 
+    }
+}

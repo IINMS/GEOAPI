@@ -1,0 +1,132 @@
+    {
+        "comm_comment": {
+            "FieldType": "00_Mytextfield",
+            "Data": {}
+        },
+        "comm_comp_ID": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_area_ID": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_condition": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_coord_rel": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_date_manuf": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_doc_rel_path": {
+            "FieldType": "11_filefield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_date_placed": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_dye": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_img_rel_path": {
+            "FieldType": "11_filefield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_int_std": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_layer_coords": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_make_manuf": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_matterial": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_model": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_rel_FID": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_repair": {
+            "FieldType": "01_datefield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_replace_change": {
+            "FieldType": "01_datefield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_replace_replace": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_telem_rel": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_tmst_form_entry_change": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        },
+        "comm_tmst_form_last_entry": {
+            "FieldType": "00_textfield",
+            "Data": {
+                "allowBlank": true
+            }
+        }
+    }
