@@ -1,0 +1,84 @@
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+<<<<<<< HEAD
+.vscode
+js/BasicVariables.js
+#API/Filter.js
+#API/HttpServer.js
+#API/LogToFiles.js
+#API/Query.js
+#API/Rules.js
+Loggers.js
+Logs/FormLogs.json
+Rules/Comm_Rules/Comm_.json
+Rules/Field_Rules/Datefield.json
+Rules/Field_Rules/Numberfield.json
+Rules/Field_Rules/Textfield.json
+Rules/SelectFieldRule.js
+Rules/SelectRule.js
+Rules/Type_Rules/type_tank.json
+Rules/Type_Rules/type_vane.json
+TableName.js
+#   db/Privil.js
+#   db/comm.js
+#   db/connect.js
+#   db/foreignAssociationsStage4.js
+#   db/foreignTables.js
+#   db/foreignTablesStage4.js
+#   db/main.js
+#   db/special.js
+#   db/type1.js
+#   db/type2.js
+#   db/type3.js
+#   el_gr/Tooltips.ini
+#   el_gr/comm_el_gr.ini
+#   el_gr/label_el_gr.ini
+#   el_gr/type_el_gr.ini
+#   en_us/Tooltips.ini
+#   en_us/comm_en_us.ini
+   filter/filter.json
+package-lock.json
+package.json
+psqlquerying.js
+
+
+
+=======
+BasicVariables.js
+.vscode
+>>>>>>> c404e3ad2164969683e7bc31f3c5589ff494be87
