@@ -1,12 +1,7 @@
 {
-    "tank_type_ID": {
-        "FieldType": "00_textfield",
-        "Data": {
-            "allowBlank": true
-        }
-    },
+    
     "tank_type": {
-        "FieldType": "00_textfield",
+        "FieldType": "03_checkboxfield",
         "Data": {
             "allowBlank": true
         }
@@ -17,26 +12,26 @@
             "allowBlank": true
         }
     },
-    "tank_length": {
-        "FieldType": "02_numberfield",
+      "tank_length": {
+        "FieldType": "02_numberfieldFloat",
         "Data": {
             "allowBlank": true
         }
     },
     "tank_width": {
-        "FieldType": "02_numberfield",
+        "FieldType": "02_numberfieldFloat",
         "Data": {
             "allowBlank": true
         }
     },
     "tank_height": {
-        "FieldType": "02_numberfield",
+        "FieldType": "02_numberfieldFloat",
         "Data": {
             "allowBlank": true
         }
     },
     "tank_wall_thick": {
-        "FieldType": "02_numberfield",
+        "FieldType": "02_numberfieldFloat",
         "Data": {
             "allowBlank": true
         }
@@ -46,19 +41,19 @@
         "allowBlank": true
     },
     "tank_rel_sensors_ID": {
-        "FieldType": "00_textfield",
+        "FieldType": "02_numberfield",
         "Data": {
             "allowBlank": true
         }
     },
     "tank_sens_lvl": {
-        "FieldType": "00_textfield",
+        "FieldType": "02_numberfieldFloat",
         "Data": {
             "allowBlank": true
         }
     },
     "tank_rel_FID_alt": {
-        "FieldType": "02_numberfield",
+        "FieldType": "02_numberfieldFloat",
         "Data": {
             "allowBlank": true
         }

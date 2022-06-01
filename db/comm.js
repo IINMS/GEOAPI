@@ -1,9 +1,8 @@
 var connect = require('./connect.js');
+const  Sequelize  = require('sequelize');
 
-//console.log("conn "+connect.Sequelize);
-const Sequelize=connect.Sequelize;
-const sequelize=connect.sequelize;
-const Model=connect.Sequelize.Model;
+const sequelize=connect.sequelizeConn;
+const Model=Sequelize.Model;
 
 class Comm extends Model {}
 Comm.init({

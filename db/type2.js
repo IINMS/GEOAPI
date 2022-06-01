@@ -1,9 +1,9 @@
 var connect = require('./connect.js');
 
+const  Sequelize  = require('sequelize');
 
-const Sequelize = connect.Sequelize;
-const sequelize = connect.sequelize;
-const Model = connect.Sequelize.Model;
+ const sequelize = connect.sequelizeConn;
+const Model = Sequelize.Model;
 
 class Evane extends Model { }
 Evane.init({
@@ -30,9 +30,10 @@ Evane.init({
     type: Sequelize.BOOLEAN,
     allowNull: false
   },
-  evane_rel_electric_ID: {
+  electric_rel_ID: {
     type: Sequelize.INTEGER,
-    allowNull: true
+    allowNull: true,
+    unique:true
   },
   evane_rel_telem: {
     type: Sequelize.BOOLEAN,
@@ -41,7 +42,13 @@ Evane.init({
   evane_rel_telem_ID: {
     type: Sequelize.INTEGER,
     allowNull: true
-  }
+  }/*,
+  evane_rel_serial_number: {
+    type: Sequelize.TEXT,
+   },
+   evane_rel_part_number: {
+    type: Sequelize.TEXT,
+   }*/
 
 }, {
     sequelize,
@@ -63,8 +70,6 @@ Evane.init({
 
 class Airvac extends Model { }
 Airvac.init({
-  // attributes
- 
   airvac_type_ID: {
     type: Sequelize.TEXT,
     primaryKey: true,
@@ -95,14 +100,12 @@ Airvac.init({
     allowNull: false
   }
 
-
 }, {
-    sequelize,
+  sequelize,
     modelName: 'type_airvac',
     freezeTableName: true,
     timestamps: false
-    // options
-  } 
+   } 
 
 );
 
@@ -126,7 +129,7 @@ Evac.init({
 
 
 }, {
-    sequelize,
+  sequelize,
     modelName: 'type_evac',
     freezeTableName: true,
     timestamps: false
@@ -189,7 +192,7 @@ Shutter.init({
 
 
 }, {
-    sequelize,
+  sequelize,
     modelName: 'type_shutter',
     freezeTableName: true,
     timestamps: false
@@ -207,8 +210,7 @@ Shutter.getpk=function(){
 
 class Cpoint extends Model { }
 Cpoint.init({
-  // attributes
-  
+   
   cpoint_type_ID: {
     type: Sequelize.TEXT,
     primaryKey: true,
@@ -254,8 +256,7 @@ Cpoint.init({
     modelName: 'type_cpoint',
     freezeTableName: true,
     timestamps: false
-    // options
-  }
+   }
 
 
 );

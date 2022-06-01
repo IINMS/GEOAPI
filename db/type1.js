@@ -1,9 +1,9 @@
 var connect = require('./connect.js');
 
+const  Sequelize  = require('sequelize');
 
-const Sequelize = connect.Sequelize;
-const sequelize = connect.sequelize;
-const Model = connect.Sequelize.Model;
+const sequelize = connect.sequelizeConn;
+const Model = Sequelize.Model;
 
 class Duct extends Model { }
 Duct.init({
@@ -61,9 +61,10 @@ Keyshut.init({
     type: Sequelize.BOOLEAN,
     allowNull: true
   },
-  keyshut_rel_electric_ID: {
-    type: Sequelize.BOOLEAN,
-    allowNull: true
+  electric_rel_ID: {
+    type: Sequelize.INTEGER,
+    allowNull: true,
+    unique:true
   }
 }, {
     sequelize,
@@ -140,7 +141,6 @@ Acc.init({
  
 class Relvalve extends Model { }
 Relvalve.init({
-  // attributes
 
   relvalve_type_ID: {
     type: Sequelize.TEXT,
@@ -167,9 +167,10 @@ Relvalve.init({
     type: Sequelize.BOOLEAN,
     allowNull: false
   },
-  relvalve_rel_electric_ID: {
+  electric_rel_ID: {
     type: Sequelize.INTEGER,
-    allowNull: true
+    allowNull: true,
+    unique:true
   },
   relvalve_rel_pilot: {
     type: Sequelize.BOOLEAN,
@@ -184,7 +185,6 @@ Relvalve.init({
     modelName: 'type_relvalve',
     freezeTableName: true,
     timestamps: false
-    // options
   } 
 
 

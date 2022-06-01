@@ -1,10 +1,10 @@
 var connect = require('./connect.js');
 
+const  Sequelize  = require('sequelize');
 
-const Sequelize=connect.Sequelize;
-const sequelize=connect.sequelize;
-const Model=connect.Sequelize.Model;
 
+const sequelize = connect.sequelizeConn;
+const Model = Sequelize.Model;
 
 class Electric extends Model {}
 
@@ -34,16 +34,22 @@ Electric.init({
     allowNull: false
   },
   	elec_telem_rel_ID: {
-    type: Sequelize.DECIMAL,
+    type: Sequelize.INTEGER,
     allowNull: true
   }
+ /*,
+  electric_rel_ID: {
+  type: Sequelize.INTEGER,
+  allowNull: true,
+
+  unique:true
+}*/
 },  
   {
   sequelize,
   modelName: 'spcl_elec',
    freezeTableName: true,
   timestamps:false
-  // options
 });
 
 class Telemetry extends Model {}
@@ -94,7 +100,17 @@ Telemetry.init({
     type: Sequelize.INTEGER,
 	 
     allowNull: false
-  }
+  },
+  telem_rel_sensors_ID: {
+ type: Sequelize.INTEGER,
+
+ allowNull: false
+},
+telem_rel_sensors: {
+type: Sequelize.BOOLEAN,
+
+allowNull: false
+}
   
   
 }, {
@@ -102,7 +118,6 @@ Telemetry.init({
   modelName: 'spcl_telem',
    freezeTableName: true,
   timestamps:false
-  // options
 });
 	
 	class GPS extends Model {}
@@ -125,7 +140,13 @@ GPS.init({
 	 
     allowNull: false
   
-	} 
+	} ,
+  GPS_rel_ID: {
+ type: Sequelize.INTEGER,
+
+ allowNull: false
+
+} 
   
   },
 	{
@@ -133,7 +154,6 @@ GPS.init({
   modelName: 'spcl_GPS',
    freezeTableName: true,
   timestamps:false
-  // options
 });
  
  	class Sensors extends Model {}
@@ -168,7 +188,13 @@ Sensors.init({
 	 
     allowNull: false
   
-	} 	
+	} 	,
+  sensors_rel_ID: {
+   type: Sequelize.SMALLINT,
+  
+   allowNull: false
+ 
+ } 
   
   },
 	{
@@ -176,7 +202,6 @@ Sensors.init({
   modelName: 'spcl_sensors',
    freezeTableName: true,
   timestamps:false
-  // options
 });
 
  	class Alerting extends Model {}
@@ -211,7 +236,13 @@ Alerting.init({
 	 
     allowNull: false
   
-	}	
+	}	,
+  alert_rel_ID: {
+ type:  Sequelize.INET,
+
+ allowNull: false
+
+}	
   
   },
 	{
@@ -219,7 +250,6 @@ Alerting.init({
   modelName: 'spcl_alert',
    freezeTableName: true,
   timestamps:false
-  // options
 });
 
 
@@ -251,11 +281,19 @@ Motor.init({
   
 	},
        motor_A: {
+
     type:  Sequelize.DECIMAL,
-	 
+	
     allowNull: false
   
-	}
+	},
+  motor_rel_ID: {
+
+type:  Sequelize.INTEGER,
+
+allowNull: false
+
+}
   
   },
 	{
@@ -263,10 +301,8 @@ Motor.init({
   modelName: 'spcl_motor',
    freezeTableName: true,
   timestamps:false
-  // options
 });
 
 
-//sequelize.sync({ force: true });
 
   module.exports = { Electric, Telemetry, GPS, Sensors, Alerting,Motor };

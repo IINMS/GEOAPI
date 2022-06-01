@@ -1,9 +1,9 @@
 var connect = require('./connect.js');
+const  Sequelize  = require('sequelize');
 
 
-const Sequelize = connect.Sequelize;
-const sequelize = connect.sequelize;
-const Model = connect.Sequelize.Model;
+const sequelize = connect.sequelizeConn;
+const Model = Sequelize.Model;
 
 class Tank extends Model { }
 Tank.init({
@@ -228,7 +228,19 @@ Wmeter.init({
   wmeter_rel_sensors_ID: {
     type: Sequelize.INTEGER,
     allowNull: true
-  }
+  }/*,
+  wmeter_serial_number: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  wmeter_part_number: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  wmeter_make_manuf: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  }*/
 
 
 }, {

@@ -34,8 +34,8 @@ router.post('/Image', function (req, res) {
       
 
  
- // res.send({ 'test': 'it works!' })
-  res.end()
+      res.send({"ok":""} );
+ // res.end()
   //res.send('About birds')
 });
 
@@ -50,7 +50,8 @@ router.post('/UserLogOut', function (req, res) {
 
 
   
-res.end()
+//res.end();
+res.send({"ok":""} );
 //res.send('About birds')
 });
 
@@ -74,7 +75,7 @@ router.post('/FormLog', function (req, res) {
 
 
   
-res.send(true )
+res.send({"ok":""} )
 //res.send('About birds')
 });
 module.exports = router;

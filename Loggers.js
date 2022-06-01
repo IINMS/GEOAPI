@@ -64,7 +64,7 @@ const fileFormat=  combine(
     defaultMeta: { service: 'user-service' },
     transports: [
   
-        new transports.File({ filename: 'C:\\xampp\\htdocs\\geo\\tools\\nodejs\\Logs\\UserLogin.json' })
+        new transports.File({ filename: '../Logs/UserLogin.json' })
     ],
   });
   

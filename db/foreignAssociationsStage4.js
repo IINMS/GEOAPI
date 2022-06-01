@@ -7,9 +7,9 @@ var foreignTables = require('./foreignTablesStage4.js');
 
  
 
-const Sequelize=connect.Sequelize;
-const sequelize=connect.sequelize;
-const Model=connect.Sequelize.Model;
+const sequelizeConn=connect.sequelizeConn;
+const sequelizeConn=connect.sequelizeConn;
+const Model=connect.sequelizeConn.Model;
 
 var Comm=common.Comm;
 

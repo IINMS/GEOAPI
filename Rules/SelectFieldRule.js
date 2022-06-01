@@ -1,10 +1,7 @@
 
-/*const typeRules =require('./TypeRules');
-const CommRules=require('./CommRules');*/
 
 const ReadFile = require('../ReadFile');
 const fs = require('fs');
-//var fs = require('fs')
 
 
 
@@ -14,14 +11,11 @@ const fs = require('fs');
 
 FieldRules = function (name) {
 
-    /*var fileNames= ReadDir(language);
-    var langObj= ReadFile(fileNames,language);*/
 
     var FieldRulesPath = "Rules/Field_Rules";
     var code = name.substring(0, 2);
     var FieldName = name.substring(3, name.length);
     console.log(FieldName);
-    //var typeRulesPath="Rules/Type_Rules";
     var file;
     switch (code) {
 
@@ -53,6 +47,17 @@ FieldRules = function (name) {
 
             file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "Fieldcontainer.json");
             return file[FieldName];
+
+            
+        case "04":
+
+            file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "Combo.json");
+            return file[FieldName];
+
+        case "05":
+
+                file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "ItemSelector.json");
+                return file[FieldName];
 
 
     };

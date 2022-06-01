@@ -3,7 +3,7 @@
 //const poi=require('./poi.js')(db.Geo.authenticate(),Sequelize);
 	const Sequelize = require('sequelize');
 	const sequelize = new Sequelize('postgres://guest:guest@192.168.1.206:5432/tymbakiStage2Forms');
-// const sequelize = new Sequelize('postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage2Forms');
+// const sequelizeConn = new Sequelize('postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage2Forms');
   sequelize.authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');

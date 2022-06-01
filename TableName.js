@@ -5,179 +5,194 @@ const type2 = require('./db/type2.js');
 const type3 = require('./db/type3.js');
 
 const special = require('./db/special.js');
+const admin = require('./db/admin.js');
 
-ORMTableName = function (tableName) {
+ORMTableName = function(tableName)
+{
 
 
-	var ORMequivalent = null;
+      var ORMequivalent = null;
 
-	switch (tableName) {
+      switch (tableName)
+      {
 
-		case "valves_with_rel_id":
+            case "valves_with_rel_id":
 
-			ORMequivalent = foreign.VANES;
-			break;
-		/*case "anode_pipelines_with_rel_id":
+                  ORMequivalent = foreign.VANES;
+                  break;
+            case "anode_pipelines_with_rel_id":
 
-			ORMequivalent = foreign.ANODEPIPES;
-			break;
-		case "primary_pipelines_with_rel_id":
+                  ORMequivalent = foreign.ANODEPIPES;
+                  break;
+            case "primary_pipelines_with_rel_id":
 
-			ORMequivalent = foreign.MAINPIPES;
-			break;
-		case "secondary_pipelines_with_rel_id":
+                  ORMequivalent = foreign.MAINPIPES;
+                  break;
+            case "secondary_pipelines_with_rel_id":
 
-			ORMequivalent = foreign.SECONDARYPIPES;
-			break;*/
-			case "pipelines_total":
+                  ORMequivalent = foreign.SECONDARYPIPES;
+                  break;
+            case "drills_with_rel_id":
 
-			ORMequivalent = foreign.PIPELINE;
-			break
-		case "drills_with_rel_id":
+                  ORMequivalent = foreign.DRILL;
+                  break;
+            case "tanks_with_rel_id":
 
-			ORMequivalent = foreign.DRILL;
-			break;
-		case "tanks_with_rel_id":
+                  ORMequivalent = foreign.TANKS;
+                  break;
+            case "pumpstations_with_rel_id":
 
-			ORMequivalent = foreign.TANKS;
-			break;
-		case "pumpstations_with_rel_id":
+                  ORMequivalent = foreign.PUMPHOUSE;
+                  break;
+            case "boosters_with_rel_id":
 
-			ORMequivalent = foreign.PUMPHOUSE;
-			break;
-		case "boosters_with_rel_id":
+                  ORMequivalent = foreign.BOOSTERS;
+                  break;
+            case "collecteur_with_rel_id":
 
-			ORMequivalent = foreign.BOOSTERS;
-			break;
-		case "collecteur_with_rel_id":
+                  ORMequivalent = foreign.KOLEKTER;
+                  break;
+            case "comm_":
 
-			ORMequivalent = foreign.KOLEKTER;
-			break;
-		case "comm_":
+                  ORMequivalent = common.Comm;
+                  break;
 
-			ORMequivalent = common.Comm;
-			break;
+            case "type_duct":
+                  ORMequivalent = type1.Duct;
 
-		case "type_duct":
-			ORMequivalent = type1.Duct;
+                  break;
 
-			break;
+            case "type_keyshut":
+                  ORMequivalent = type1.Keyshut;
 
-		case "type_keyshut":
-			ORMequivalent = type1.Keyshut;
+                  break;
 
-			break;
+            case "type_depress":
+                  ORMequivalent = type1.Depress;
 
-		case "type_depress":
-			ORMequivalent = type1.Depress;
+                  break;
 
-			break;
+            case "type_acc":
+                  ORMequivalent = type1.Acc;
 
-		case "type_acc":
-			ORMequivalent = type1.Acc;
+                  break;
 
-			break;
+            case "type_relvalve":
+                  ORMequivalent = type1.Relvalve;
 
-		case "type_relvalve":
-			ORMequivalent = type1.Relvalve;
+                  break;
 
-			break;
+            case "type_vane":
+                  ORMequivalent = type1.Vane;
 
-		case "type_vane":
-			ORMequivalent = type1.Vane;
+                  break;
 
-			break;
+            case "type_evane":
+                  ORMequivalent = type2.Evane;
 
-		case "type_evane":
-			ORMequivalent = type2.Evane;
+                  break;
 
-			break;
+            case "type_airvac":
+                  ORMequivalent = type2.Airvac;
 
-		case "type_airvac":
-			ORMequivalent = type2.Airvac;
+                  break;
 
-			break;
+            case "type_evac":
+                  ORMequivalent = type2.Evac;
 
-		case "type_evac":
-			ORMequivalent = type2.Evac;
+                  break;
 
-			break;
+            case "type_shutter":
+                  ORMequivalent = type2.Shutter;
 
-		case "type_shutter":
-			ORMequivalent = type2.Shutter;
+                  break;
 
-			break;
+            case "type_cpoint":
+                  ORMequivalent = type2.Cpoint;
 
-		case "type_cpoint":
-			ORMequivalent = type2.Cpoint;
+                  break;
 
-			break;
+            case "type_tank":
+                  ORMequivalent = type3.Tank;
 
-		case "type_tank":
-			ORMequivalent = type3.Tank;
+                  break;
 
-			break;
+            case "type_stream":
+                  ORMequivalent = type3.Stream;
 
-		case "type_stream":
-			ORMequivalent = type3.Stream;
+                  break;
 
-			break;
+            case "type_drill":
+                  ORMequivalent = type3.Drill;
 
-		case "type_drill":
-			ORMequivalent = type3.Drill;
+                  break;
 
-			break;
+            case "type_struct":
+                  ORMequivalent = type3.Struct;
 
-		case "type_struct":
-			ORMequivalent = type3.Struct;
+                  break;
 
-			break;
+            case "type_wmeter":
+                  ORMequivalent = type3.Wmeter;
 
-		case "type_wmeter":
-			ORMequivalent = type3.Wmeter;
+                  break;
 
-			break;
+            case "type_cpoint":
+                  ORMequivalent = type2.Cpoint;
 
-		case "type_cpoint":
-			ORMequivalent = type2.Cpoint;
+                  break;
 
-			break;
 
+            case "spcl_telem":
+                  ORMequivalent = special.Telemetry;
 
-		case "spcl_telem":
-			ORMequivalent = special.Telemetry;
+                  break;
 
-			break;
+            case "spcl_GPS":
+                  ORMequivalent = special.GPS;
 
-		case "spcl_GPS":
-			ORMequivalent = special.GPS;
+                  break;
 
-			break;
+            case "spcl_sensors":
+                  ORMequivalent = special.Sensors;
 
-		case "spcl_sensors":
-			ORMequivalent = special.Sensors;
+                  break;
 
-			break;
+            case "spcl_alert":
+                  ORMequivalent = special.Alerting;
 
-		case "spcl_alert":
-			ORMequivalent = special.Alerting;
+                  break;
 
-			break;
+            case "spcl_motor":
+                  ORMequivalent = special.Motor;
 
-		case "spcl_motor":
-			ORMequivalent = special.Motor;
+                  break;
 
-			break;
+            case "personnel":
 
+                  ORMequivalent = admin.Personnel;
 
+                  break;
 
 
-	}
-	//console.log("ORMequivalent "+ORMequivalent);
-	return ORMequivalent;
+            case "working_team":
+                  ORMequivalent = admin.WorkingTeam;
+
+                  break;
+
+            case "Tasks":
+                  ORMequivalent = admin.Tasks;
+
+                  break;
+
+
+      }
+      //console.log("ORMequivalent "+ORMequivalent);
+      return ORMequivalent;
 
 }
 
 
-module.exports = { ORMTableName }
-
+module.exports = {
+      ORMTableName
+}

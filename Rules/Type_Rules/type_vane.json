@@ -25,7 +25,7 @@
         }
     },
     "vane_thread": {
-        "FieldType": "02_numberfield",
+        "FieldType": "02_numberfieldFloat",
         "Data":{
             "allowBlank": true
 
@@ -33,8 +33,10 @@
         }
     },
     "vane_flange": {
-        "FieldType": "02_numberfield",
+        "FieldType": "02_numberfieldFloat",
+        "Data":{
         "allowBlank": true
+        }
     },
     "vane_screw": {
         "FieldType": "00_textfield",

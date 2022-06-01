@@ -1,9 +1,10 @@
 var connect = require('./connect.js');
+const  Sequelize  = require('sequelize');
 
 
-//const Sequelize=connect.Sequelize;
-const sequelize=connect.sequelize;
-const Model=connect.Sequelize.Model;
+//const sequelizeConn=connect.sequelizeConn;
+const sequelize=connect.sequelizeConn;
+const Model=Sequelize.Model;
 
  /*
   class POI extends Model {}

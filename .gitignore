@@ -36,6 +36,7 @@
 ehthumbs.db
 Thumbs.db
 <<<<<<< HEAD
+<<<<<<< HEAD
 .vscode
 js/BasicVariables.js
 #API/Filter.js
@@ -82,3 +83,10 @@ psqlquerying.js
 BasicVariables.js
 .vscode
 >>>>>>> c404e3ad2164969683e7bc31f3c5589ff494be87
+=======
+
+
+.vscode/
+node_modules/
+Logs/
+>>>>>>> 5fae5d1e36154f2264d3ea16a547615dbdfb5af9

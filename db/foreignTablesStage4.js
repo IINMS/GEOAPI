@@ -1,12 +1,12 @@
-var connect = require('./connect.js');
+/*var connect = require('./connect.js');
 
 
-const Sequelize=connect.Sequelize;
-const sequelize=connect.sequelize;
-const Model=connect.Sequelize.Model;
+const sequelizeConn=connect.sequelizeConn;
+const sequelizeConn=connect.sequelizeConn;
+const Model=connect.sequelizeConn.Model;
 
  
- /* class ANODEPIPES extends Model {}
+  class ANODEPIPES extends Model {}
   ANODEPIPES.init({
   // attributes
   gid: {
@@ -74,7 +74,7 @@ const Model=connect.Sequelize.Model;
   timestamps:false,
   schema:'pois'
   // options
-});*/
+});
 
  class BOOSTERS extends Model {}
  BOOSTERS.init({
@@ -266,7 +266,7 @@ KOLEKTER.init({
 });
 
 
-/*class MAINPIPES extends Model {}
+class MAINPIPES extends Model {}
 MAINPIPES.init({
 // attributes
 gid: {
@@ -334,7 +334,7 @@ freezeTableName: true,
 timestamps:false,
 schema:'pois'
 // options
-});*/
+});
 
 class PUMPHOUSE extends Model {}
 PUMPHOUSE.init({
@@ -399,7 +399,7 @@ PUMPHOUSE.init({
  // options
 });
 
-/*class SECONDARYPIPES extends Model {}
+class SECONDARYPIPES extends Model {}
 SECONDARYPIPES.init({
 // attributes
 gid: {
@@ -467,7 +467,7 @@ freezeTableName: true,
 timestamps:false,
 schema:'pois'
 // options
-});*/
+});
 
 class TANKS extends Model {}
 TANKS.init({
@@ -595,74 +595,4 @@ VANES.init({
  // options
 });
 //KOLEKTER.sync();
-
-
-
- class PIPELINE extends Model {}
-PIPELINE.init({
- // attributes
- gid: {
-   type: Sequelize.INTEGER,
- primaryKey:true,
-   allowNull: false
- },
- name: {
-   type: Sequelize.CHAR(254)
-   // allowNull defaults to true
- },
-  folderpath: {
-   type: Sequelize.CHAR(254)
-   // allowNull defaults to true
- },
-  snippet: {
-   type: Sequelize.CHAR(254)
-   // allowNull defaults to true
- },
-  popupinfo: {
-   type: Sequelize.CHAR(254)
-   // allowNull defaults to true
- },
-  labelid: {
-   type: Sequelize.BIGINT
-   // allowNull defaults to true
- },
-  area: {
-   type: Sequelize.CHAR(50)
-   // allowNull defaults to true
- },
-  areaid: {
-   type: Sequelize.INTEGER
-   // allowNull defaults to true
- },
-  munid: {
-   type: Sequelize.INTEGER
-   // allowNull defaults to true
- },
- munareaid: {
-   type: Sequelize.SMALLINT
-   // allowNull defaults to true
- },
- munareaid: {
-   type: Sequelize.SMALLINT
-   // allowNull defaults to true
- },
-  munareaid: {
-   type: Sequelize.GEOMETRY('POINT', 4121)
-   // allowNull defaults to true
- }
-}, {
-  
- sequelize,
- modelName: 'pipelines_total',
- freezeTableName: true,
- timestamps:false,
- schema:'pois'
- // options
-});
-
-
-
-
-module.exports = {PIPELINE,DRILL,BOOSTERS,KOLEKTER,PUMPHOUSE,TANKS,VANES };
-
-  //module.exports = {ANODEPIPES,DRILL,BOOSTERS,KOLEKTER,MAINPIPES,PUMPHOUSE,SECONDARYPIPES,TANKS,VANES };
+  module.exports = {ANODEPIPES,DRILL,BOOSTERS,KOLEKTER,MAINPIPES,PUMPHOUSE,SECONDARYPIPES,TANKS,VANES };*/

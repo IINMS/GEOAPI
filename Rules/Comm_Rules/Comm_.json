@@ -1,6 +1,6 @@
     {
         "comm_comment": {
-            "FieldType": "00_Mytextfield",
+            "FieldType": "00_textfield",
             "Data": {}
         },
         "comm_comp_ID": {
