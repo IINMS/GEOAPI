@@ -110,7 +110,6 @@ Comm.init({
   }
   
 }, {
-
   sequelize,
   modelName: 'comm_',
    freezeTableName: true,

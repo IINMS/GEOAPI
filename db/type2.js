@@ -70,7 +70,6 @@ Evane.init({
 
 class Airvac extends Model { }
 Airvac.init({
-
   airvac_type_ID: {
     type: Sequelize.TEXT,
     primaryKey: true,

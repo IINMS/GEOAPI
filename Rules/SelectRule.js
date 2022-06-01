@@ -1,10 +1,10 @@
-const ReadFile = require('../ReadFile');
-const fs = require('fs');
 
+    /*var fileNames= ReadDir(language);
 
-
-
-
+    var CommRulesPath = "Rules/Comm_Rules";
+    var typeRulesPath = "Rules/Type_Rules";
+    switch (name) {
+=======
 TableRules = function(name)
 {
 
@@ -15,6 +15,7 @@ TableRules = function(name)
       var adminRulesPath = "Rules/Admin_Rules";
       switch (name)
       {
+>>>>>>> 5fae5d1e36154f2264d3ea16a547615dbdfb5af9
 
 
 
@@ -71,4 +72,4 @@ TableRules = function(name)
 
 module.exports = {
       TableRules
-};
+};*/

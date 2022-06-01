@@ -12,7 +12,6 @@ const fs = require('fs');
 FieldRules = function (name) {
 
 
-
     var FieldRulesPath = "Rules/Field_Rules";
     var code = name.substring(0, 2);
     var FieldName = name.substring(3, name.length);
