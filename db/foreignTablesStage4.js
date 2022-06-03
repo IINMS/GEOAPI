@@ -74,7 +74,7 @@ ANODEPIPES.init({
   timestamps: false,
   schema: 'pois'
   // options
-});
+});*/
 
 class BOOSTERS extends Model { }
 BOOSTERS.init({

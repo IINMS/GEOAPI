@@ -19,7 +19,7 @@ var privil = require('./Privil.js');
 //const sequelizeConn=connect.sequelizeConn;
 const sequelize=connect.sequelizeConn;
 const Model=Sequelize.Model;
-admin.Tasks.sync({alter: true })
+//admin.Tasks.sync({alter: true })
   /*
  type4.MetalBody.sync({force: true })
  type4.FlowMeter.sync({alter: true })
