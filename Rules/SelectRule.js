@@ -1,8 +1,5 @@
-
-
-    const ReadFile = require('../ReadFile');
-    const fs = require('fs');
-    
+const ReadFile = require('../ReadFile');
+const fs = require('fs');
 
 TableRules = function(name)
 {
@@ -14,7 +11,6 @@ TableRules = function(name)
       var adminRulesPath = "Rules/Admin_Rules";
       switch (name)
       {
-
 
 
 

@@ -5,16 +5,7 @@ const conn = require('../db/connect.js');
 const lang = require('../ReadIni.js');
 const TableName = require('../TableName.js');
 
-/*sequelize-redis-cache 
-Small fluent interface for caching sequelize 
-database query results in redis more easily. Simply put, 
-this is a wrapper around sequelize retrieval 
-methods that will automatically check in the configured 
-redis instance for a value (based on a hash of the query
-and model name), then retrieve from the database and
- persist in redis if not found. It is promise based, 
- so it will resemble sequelize for the most part*/
-//var conn = require('../db/connect.js');
+
 
 
 var fs = require("fs");
@@ -36,7 +27,9 @@ filterRouter.get('/filterRawQuery', function (req, res, next) { //post request t
 	console.log('RESSSSS' + res)	
 	conn.cacheObj.ttl(5);
 	console.log('query' + query)
+	//conn.cacheObj.query(query)
 	conn.cacheObj.query(query)
+
 		.then(data => {
 			console.log(conn.cacheObj.cacheHit);
 			//console.log(cacheObj.cacheConditionalHit);
@@ -64,7 +57,7 @@ async function fetchData(req, res, next) {
 	console.log(field)
 	var dbTableName = req.query.tableName
 	var table = TableName.ORMTableName(dbTableName);
-	console.log("tableName"+dbTableName)
+ 	console.log("tableName "+dbTableName)
 	conn.cacheObj
 		.model(dbTableName)	
 		.ttl(5)
