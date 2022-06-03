@@ -167,6 +167,7 @@ filterRouter.get('/getORMTableName', function (req, res, next) { //post request 
 	var dbTableName = req.query.tableName
 	var dbFieldName = req.query.fieldName
 	var table = TableName.ORMTableName(dbTableName);
+	
 	res.send({ filter: table.rawAttributes[dbFieldName].type.key })
 })
 filterRouter.get('/langData', function (req, res, next) { //post request to db
