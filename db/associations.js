@@ -12,7 +12,7 @@ var type3 = require('./type3.js');
 var special = require('./special.js');
 
 
-const sequelize=connect.sequelizeConnConn;
+const sequelize=connect.sequelizeConn;
 const Model=Sequelize.Model;
 
 var Comm=common.Comm;
