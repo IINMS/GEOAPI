@@ -3,49 +3,11 @@ const config = require('./config.json');
 var redis = require('redis');
 var cacher = require('sequelize-redis-cache');
 
-//const db = {};
-/*
-const databases = Object.keys(config.databases);
-for(let i = 0; i < databases.length; ++i) {
-    let database = databases[i];
-	
-    let dbPath = config.databases[database];
-	//console.log(database);
-    db[database] = new Sequelize( dbPath.path );
-}*/
-//console.log(db.Geo);
 
-
-
-// Option 1: Passing parameters separately
-/*const conn = new Sequelize('tymbakiStage2', 'postgress', '!*Geo1*!', {
-  host: '192.168.1.206',
-  dialect:  'postgres'
-});*/
-
-// Option 2: Passing a connection URI
-/*db.Geo
-  .authenticate()*/
-  
-  
-//const poi=require('./poi.js')(db.Geo.authenticate(),Sequelize);
-	//const Sequelize = require('sequelize');
-	//const sequelize = new Sequelize('postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage2Forms');
- 
-    /*Geo.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err);
-  });*/  
- // const sequelize = new Sequelize('postgres://mapgiseu:b1SJs3t64n@206.189.127.214:5432/mapgiseu_tymbakistage4forms');
-  // const sequelize = new Sequelize('postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage4Forms');
   var rc = redis.createClient(6379, 'localhost');
   
   //var db = new Sequelize('cache_tester', 'root', 'root', { dialect: 'mysql' });
   rc.on('connect', function () {
-    //console.log('\033[31mRedis client connected! \033[0m');red
     console.log('\033[32mRedis client connected!\033[0m');
     
     console.log(`${rc.connected}`);
@@ -55,7 +17,7 @@ for(let i = 0; i < databases.length; ++i) {
     console.log('Something went wrong ' + err);
   })
   
-   const sequelize    = new Sequelize('postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage4Forms', {
+   const sequelizeConn    = new Sequelize('postgres://postgres:!*Geo1*!@192.168.1.206:5432/tymbakiStage4Forms', {
     define: {
         hooks: {
             afterCreate:    (instance, options) => cacheObj.clearCache(options),
@@ -66,7 +28,7 @@ for(let i = 0; i < databases.length; ++i) {
         }
     }
 });
-var cacheObj = cacher(sequelize, rc)
+var cacheObj = cacher(sequelizeConn, rc)
 //const clearCache = function(instance, options) {
 //if (instance.constructor.name === 'Session') {
  // console.log('\033[32mclearCache\033[0m');
@@ -85,7 +47,7 @@ var cacheObj = cacher(sequelize, rc)
  
  
    // db.Forms.authenticate()
-  sequelize.authenticate()
+   sequelizeConn.authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
   })
@@ -102,7 +64,7 @@ var cacheObj = cacher(sequelize, rc)
   
    
 var Geo;
-module.exports = { sequelize,Sequelize,rc,cacheObj};
+module.exports = { sequelizeConn,Sequelize,rc,cacheObj};
 /*
 type_acc.findAll().then(users => {
   console.log("All users:", JSON.stringify(users, null, 4));
