@@ -22,8 +22,9 @@ server.open((err) => {
 
 
 
-filterRouter.get('/filterRawQuery', function (req, res, next) { //post request to db
-	var query = req.query.query
+filterRouter.post('/filterRawQuery', function (req, res, next) { //post request to db
+	var query = req.body.query
+	//console.log(req)
 	console.log('RESSSSS' + res)	
 	conn.cacheObj.ttl(5);
 	console.log('query' + query)
@@ -115,8 +116,8 @@ filterRouter.get('/loadFilter', function (req, res, next) {
 
 });
 
-filterRouter.get('/saveFilter', function (req, res, next) {
-	let data = req.query.data;
+filterRouter.post('/saveFilter', function (req, res, next) {
+	let data = req.body.data;
 
 
 	 console.log('DATA'+data)
