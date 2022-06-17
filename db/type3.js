@@ -198,11 +198,14 @@ Struct.getpk=function(){
 class Wmeter extends Model { }
 Wmeter.init({
   // attributes
-
-  wmeter_type_ID: {
+  wmeter_ID: {
     type: Sequelize.TEXT,
     primaryKey: true,
     allowNull: false
+  },
+  wmeter_type_ID: {
+    type: Sequelize.TEXT,
+    allowNull: true
   },
   wmeter_csection: {
     type: Sequelize.DECIMAL,
@@ -262,6 +265,5 @@ Wmeter.getpk=function(){
   return "wmeter_type_ID";
 }
 
-//sequelize.sync({ force: true });
-
+ 
 module.exports = { Tank, Stream, Drill, Struct, Wmeter };

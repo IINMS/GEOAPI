@@ -1,0 +1,12 @@
+{
+  "MultiSelector": {
+    "msgTarget": "side",
+    "maxHeight": "100",
+    "minHeight": "100",
+    "maxSelections": "2",
+    "allowBlank": false,
+    "valueField": "number",
+    "displayField": "numberName",
+    "store": ["1","2"]
+  }
+}

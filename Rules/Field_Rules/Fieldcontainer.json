@@ -3,16 +3,11 @@
         "xtype": "fieldcontainer",
         "defaultType": "checkboxfield",
         "fieldDefaults": {
-			
-			"labelWidth":"60%"
-			 
+            "labelWidth": "60%"
         },
         "items": [
             {
                 "labelAlign": "right"
-               
-               
-                 
             }
         ]
     },
@@ -20,15 +15,33 @@
         "xtype": "fieldcontainer",
         "defaultType": "radiofield",
         "fieldDefaults": {
-			
-			"width":"70%"
-			 
+            "width": "70%"
         },
         "items": [
             {
                 "labelAlign": "right"
-              
-                
+            }
+        ]
+    },
+    "buttonTextfield": {
+        "xtype": "fieldcontainer",
+        "layout": "hbox",
+        "items": [
+            {
+                "xtype": "button",
+                "text": "click",
+                "id": "button_buttonTextfield"
+            }
+        ]
+    },
+    "elecEquipmentButton": {
+        "xtype": "fieldcontainer",
+        "layout": "hbox",
+        "items": [
+            {
+                "xtype": "button",
+                "text": "click",
+                "id": "button_elecEquipmentButton"
             }
         ]
     }

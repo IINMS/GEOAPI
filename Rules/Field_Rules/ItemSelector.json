@@ -1,19 +1,14 @@
 {
-    "ItemSelector": 
-    {
-        
-    
-        "fieldLabel": "ItemSelector",
-        "name":"itemselector",
-        "imagePath": "../ux/images/",
-        "id":"items",
-     
-        "allowBlank": true,
-        "fromTitle": "Διαθέσιμοι",
-        "toTitle": "Επιλεγμένοι",
-        "width":"70%"
+  "ItemSelector": {
+    "fieldLabel": "ItemSelector",
+    "name": "itemselector",
+    "imagePath": "../ux/images/",
+    "id": "items",
+    "allowBlank": true,
+    "fromTitle": "Διαθέσιμοι",
+    "toTitle": "Επιλεγμένοι",
+    "width": "70%"
 
-   }
-
-  
- }
+ 
+  }
+}

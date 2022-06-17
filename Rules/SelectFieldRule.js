@@ -48,7 +48,7 @@ FieldRules = function (name) {
             file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "Fieldcontainer.json");
             return file[FieldName];
 
-            
+
         case "04":
 
             file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "Combo.json");
@@ -56,8 +56,18 @@ FieldRules = function (name) {
 
         case "05":
 
-                file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "ItemSelector.json");
-                return file[FieldName];
+            file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "ItemSelector.json");
+            return file[FieldName];
+
+        case "06":
+
+            file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "MultiSelector.json");
+            return file[FieldName];
+        case "07":
+
+            file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "Button.json");
+            return file[FieldName];
+
 
 
     };
