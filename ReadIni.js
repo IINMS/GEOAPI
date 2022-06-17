@@ -13,12 +13,10 @@ LangIni = function (language) {
 
 		case "el_gr":
 			console.log(__dirname)
-			//let path=__dirname +"\\"+language;
-			 fileNames = ReadDir(language); //language=dirname
+			fileNames = ReadDir(language); //language=dirname
 			console.log('%c Filenames ' + fileNames, 'background: #222; color: #bada55');
 
 			langObj = ReadFile(fileNames, language);
-			//console.log(langObj); 
 			break;
 
 		case "en_us":

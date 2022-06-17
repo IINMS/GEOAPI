@@ -6,8 +6,8 @@ var common = require('./comm.js');
 var type1 = require('./type1.js');
 var type2 = require('./type2.js');
 var type3 = require('./type3.js');
+var type4 = require('./type4.js');
 
- 
 
 var special = require('./special.js');
 
@@ -42,9 +42,10 @@ var Sensors=special.Sensors;
 var Motor=special.Motor;
 var GPS=special.GPS;
 
- 
-
-
+var ElectronicEquipment=type4.ElectronicEquipment;
+var MetalBody=type4.MetalBody;
+var FlowMeter =type4.FlowMeter;
+var FlowRegulator =type4.FlowRegulator;
 
  
 Comm.hasOne(Keyshut,{foreignKey: 'keyshut_type_ID'}); 
@@ -62,8 +63,7 @@ Relvalve.belongsTo(Comm,{  foreignKey: 'relvalve_type_ID'});
 Comm.hasOne(Vane,{foreignKey: 'vane_type_ID'}); 
 Vane.belongsTo(Comm,{  foreignKey: 'vane_type_ID'});
  
-Comm.hasOne(Evane,{foreignKey: 'evane_type_ID'}); 
-Evane.belongsTo(Comm,{  foreignKey: 'evane_type_ID'});
+
 
 Comm.hasOne(Airvac,{foreignKey: 'airvac_type_ID'}); 
 Airvac.belongsTo(Comm,{  foreignKey: 'airvac_type_ID'});
@@ -86,14 +86,39 @@ Stream.belongsTo(Comm,{  foreignKey: 'stream_type_ID'});
 Comm.hasOne(Drill,{foreignKey: 'drill_type_ID'}); 
 Drill.belongsTo(Comm,{  foreignKey: 'drill_type_ID'});
 
-/*Comm.hasOne(Struct,{foreignKey: 'struct_type_ID'}); 
-Struct.belongsTo(Struct,{  foreignKey: 'struct_type_ID'});*/
+//Comm.hasOne(Struct,{foreignKey: 'struct_type_ID'}); 
+//Struct.belongsTo(Struct,{  foreignKey: 'struct_type_ID'});
 
-Comm.hasOne(Wmeter,{foreignKey: 'wmeter_type_ID'}); 
+Comm.hasMany(Wmeter,{foreignKey: 'wmeter_type_ID'}); 
 Wmeter.belongsTo(Comm,{  foreignKey: 'wmeter_type_ID'});
 
 Comm.hasOne(Duct,{foreignKey: 'duct_type_ID',sourcekey: 'comm_ID'});
 Duct.belongsTo(Comm,{ foreignKey: 'duct_type_ID'});
+
+
+Comm.hasOne(ElectronicEquipment,{foreignKey: 'elec_equip_type_ID'});
+ElectronicEquipment.belongsTo(Comm,{ foreignKey: 'elec_equip_type_ID'});
+
+
+Comm.hasOne(MetalBody,{foreignKey: 'metal_body_type_ID'});
+MetalBody.belongsTo(Comm,{ foreignKey: 'metal_body_type_ID'});
+
+
+
+
+Comm.hasMany(Evane,{foreignKey: 'evane_type_ID',}); 
+Evane.belongsTo(Comm,{  foreignKey: 'evane_type_ID'});
+
+
+//Evane.hasOne(FlowMeter,{foreignKey: 'flow_meter_type_ID'});
+//FlowMeter.belongsTo(Evane,{ foreignKey: 'flow_meter_type_ID'});
+
+
+ 
+
+
+Evane.hasOne(FlowRegulator,{foreignKey: 'flow_regulator_type_ID'});
+FlowRegulator.belongsTo(Evane,{ foreignKey: 'flow_regulator_type_ID'});
 
 /*
 

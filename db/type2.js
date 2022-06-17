@@ -1,18 +1,20 @@
 var connect = require('./connect.js');
 
-const  Sequelize  = require('sequelize');
+const Sequelize = require('sequelize');
 
- const sequelize = connect.sequelizeConn;
+const sequelize = connect.sequelizeConn;
 const Model = Sequelize.Model;
 
 class Evane extends Model { }
 Evane.init({
-  // attributes
- 
+
+  evane_ID: {
+    type: Sequelize.TEXT,
+    primaryKey: true,
+  },
   evane_type_ID: {
     type: Sequelize.TEXT,
-	  primaryKey: true,
-    allowNull: false
+    allowNull: true
   },
   evane_csection: {
     type: Sequelize.DECIMAL,
@@ -33,7 +35,7 @@ Evane.init({
   electric_rel_ID: {
     type: Sequelize.INTEGER,
     allowNull: true,
-    unique:true
+    unique: true
   },
   evane_rel_telem: {
     type: Sequelize.BOOLEAN,
@@ -51,21 +53,21 @@ Evane.init({
    }*/
 
 }, {
-    sequelize,
-    modelName: 'type_evane',
-    freezeTableName: true,
-    timestamps: false
-    // options
-  }
+  sequelize,
+  modelName: 'type_evane',
+  freezeTableName: true,
+  timestamps: false
+  // options
+}
 
 
 
 
-  );
+);
 
-  Evane.getpk=function(){
-    return "evane_type_ID";
-  }
+Evane.getpk = function () {
+  return "evane_type_ID";
+}
 
 
 class Airvac extends Model { }
@@ -102,21 +104,21 @@ Airvac.init({
 
 }, {
   sequelize,
-    modelName: 'type_airvac',
-    freezeTableName: true,
-    timestamps: false
-   } 
+  modelName: 'type_airvac',
+  freezeTableName: true,
+  timestamps: false
+}
 
 );
 
-Airvac.getpk=function(){
+Airvac.getpk = function () {
   return "airvac_type_ID";
 }
 
 class Evac extends Model { }
 Evac.init({
   // attributes
-  
+
   evac_type_ID: {
     type: Sequelize.TEXT,
     primaryKey: true,
@@ -130,23 +132,23 @@ Evac.init({
 
 }, {
   sequelize,
-    modelName: 'type_evac',
-    freezeTableName: true,
-    timestamps: false
-    // options
-  } 
-  
-  );
+  modelName: 'type_evac',
+  freezeTableName: true,
+  timestamps: false
+  // options
+}
 
-  Evac.getpk=function(){
-    return "evac_type_ID";
-  }
-  
+);
+
+Evac.getpk = function () {
+  return "evac_type_ID";
+}
+
 
 class Shutter extends Model { }
 Shutter.init({
   // attributes
-  
+
   shutter_type_ID: {
     type: Sequelize.TEXT,
     primaryKey: true,
@@ -193,24 +195,24 @@ Shutter.init({
 
 }, {
   sequelize,
-    modelName: 'type_shutter',
-    freezeTableName: true,
-    timestamps: false
-    // options
-  }
+  modelName: 'type_shutter',
+  freezeTableName: true,
+  timestamps: false
+  // options
+}
 
 
 
 );
 
-Shutter.getpk=function(){
+Shutter.getpk = function () {
   return "shutter_type_ID";
 }
 
 
 class Cpoint extends Model { }
 Cpoint.init({
-   
+
   cpoint_type_ID: {
     type: Sequelize.TEXT,
     primaryKey: true,
@@ -252,19 +254,19 @@ Cpoint.init({
 
 
 }, {
-    sequelize,
-    modelName: 'type_cpoint',
-    freezeTableName: true,
-    timestamps: false
-   }
+  sequelize,
+  modelName: 'type_cpoint',
+  freezeTableName: true,
+  timestamps: false
+}
 
 
 );
 
-Cpoint.getpk=function(){
+Cpoint.getpk = function () {
   return "cpoint_type_ID";
 }
 
-//sequelize.sync({ force: true });
+//Evane.sync({ force: true });
 
 module.exports = { Evane, Airvac, Evac, Shutter, Cpoint };

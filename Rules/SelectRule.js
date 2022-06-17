@@ -1,16 +1,14 @@
 const ReadFile = require('../ReadFile');
 const fs = require('fs');
 
-TableRules = function(name)
-{
+TableRules = function (name) {
 
 
 
       var CommRulesPath = "Rules/Comm_Rules";
       var typeRulesPath = "Rules/Type_Rules";
       var adminRulesPath = "Rules/Admin_Rules";
-      switch (name)
-      {
+      switch (name) {
 
 
 
@@ -56,6 +54,9 @@ TableRules = function(name)
 
             case "Tasks":
                   return ReadFile.ReadJsonFile(adminRulesPath + "/" + name + ".json");
+
+            case "collecteur":
+                  return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
 
       };
 

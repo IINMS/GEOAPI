@@ -1,0 +1,43 @@
+{
+    "_wmeter": {
+        "FieldType": "06_MultiSelector",
+        "Data": {
+            "selected": "",
+            "dbData": {
+                "call":"onClick"
+            }
+        }
+    },
+    "_elec_equipment": {
+        "FieldType": "03_elecEquipmentButton",
+        "Data": {
+            "allowBlank": true,
+            "listenerID": "button_elecEquipmentButton",
+            "rule_listeners": {
+                "click": "onClick"
+            }
+        }
+    },
+    "_metal_body": {
+        "FieldType": "03_buttonTextfield",
+        "Data": {
+            "allowBlank": true,
+            "listenerID": "button_buttonTextfield",
+            "rule_listeners": {
+                "click": "onClick"
+            }
+        }
+    },
+    "_elec_vane": {
+        "FieldType": "06_MultiSelector",
+        "Data": {
+            "selected": ""
+        }
+    },
+    "buttonItem": {
+        "FieldType": "07_buttonMultiSelect",
+        "Data": {
+            "allowBlank": true
+        }
+    }
+}

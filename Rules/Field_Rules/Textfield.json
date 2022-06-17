@@ -1,22 +1,23 @@
 {
     "Mytextfield": {
-        "xtype": "textfield"
-
-
+        "xtype": "textfield",
+        "id": "textfiled"
     },
     "textfield": {
         "xtype": "textfield",
-      
-        "width":"90%"
-
+        "width": "90%"
     },
-     "textarea" : 
-    { 
-   "xtype"     : "textareafield",
-   "grow"      : false,
-   "width":"90%"
-
-   
-}
-
+    "textarea": {
+        "xtype": "textareafield",
+        "grow": false,
+        "width": "90%"
+    },
+    "buttonTextfield": {
+        "xtype": "textfield",
+        "items": [
+            {
+                "xtype": "button"
+            }
+        ]
+    }
 }

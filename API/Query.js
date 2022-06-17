@@ -9,6 +9,8 @@ const common = require('../db/comm.js');
 const type1 = require('../db/type1.js');
 const type2 = require('../db/type2.js');
 const type3 = require('../db/type3.js');
+const type4 = require('../db/type4.js');
+
 const admin = require('../db/admin.js');
 
 const lang = require('../ReadIni.js');
@@ -256,7 +258,10 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
                               type3.Tank,
                               type3.Stream,
                               type3.Drill,
-                              type3.Wmeter
+                              type3.Wmeter,
+                              type4.MetalBody,
+                              type4.ElectronicEquipment
+
 
 
                         ]

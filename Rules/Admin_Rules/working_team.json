@@ -56,8 +56,10 @@
   "Data": {
       "allowBlank": true,
       "fieldLabel": "Φίλτρο",
+      "listenerID":"textfiled",
       "rule_listeners" : {
         "change" :"myFilter"
+        
       } 
 
   }
@@ -74,12 +76,7 @@
  
   "datastore":{
     "fields": ["Name","Occupation"]
-    
-
- 
-
-   
-  
+     
 }
 }
 
