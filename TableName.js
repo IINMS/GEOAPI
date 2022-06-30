@@ -7,6 +7,7 @@ const type4 = require('./db/type4.js');
 
 const special = require('./db/special.js');
 const admin = require('./db/admin.js');
+const filter = require('./db/filter.js');
 
 ORMTableName = function (tableName) {
 
@@ -182,6 +183,10 @@ ORMTableName = function (tableName) {
             case "Tasks":
                   ORMequivalent = admin.Tasks;
 
+                  break;
+
+            case "filter":
+                  ORMequivalent = filter.Filter
                   break;
 
 

@@ -13,6 +13,7 @@ const type4 = require('../db/type4.js');
 
 const admin = require('../db/admin.js');
 
+
 const lang = require('../ReadIni.js');
 const TableName = require('../TableName.js');
 
@@ -132,8 +133,6 @@ queryRouter.post('/insert', function (req, res, next) { //post request to db for
       Addition(Ntoadd, DbName, res);
 
 
-
-
 })
 
 
@@ -142,6 +141,7 @@ queryRouter.post('/insert', function (req, res, next) { //post request to db for
 queryRouter.post('/addition', function (req, res, next) { //post request to db for fetching data 
 
       var id = req.body.ID;
+      
       var table = TableName.ORMTableName(req.body.DbName);
 
       console.log("id ", id);
@@ -156,6 +156,7 @@ queryRouter.post('/addition', function (req, res, next) { //post request to db f
 
 
       var DbName = req.body.DbName;
+      
       Addition(Ntoadd, DbName, res);
 
 
@@ -170,7 +171,7 @@ async function Addition(Ntoadd, DbName, res) {
 
       var table = TableName.ORMTableName(DbName);
       //    console.log("DataObj ", table);
-
+    
       await table.create(Ntoadd).then(usersData => {
 
             console.log("All users:", JSON.stringify(usersData, null, 4));
