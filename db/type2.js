@@ -64,8 +64,11 @@ Evane.init({
 
 
 );
-
 Evane.getpk = function () {
+  return "evane_ID";
+}
+
+Evane.getfk = function () {
   return "evane_type_ID";
 }
 

@@ -1,0 +1,44 @@
+{
+    "wmeter_type_ID": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_csection": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_pmax": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_rel_telem": {
+        "FieldType": "03_checkboxfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_rel_telem_ID": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_rel_sensors": {
+        "FieldType": "03_checkboxfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_rel_sensors_ID": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    }
+}

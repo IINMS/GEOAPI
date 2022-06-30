@@ -17,8 +17,12 @@ const admin = require('../db/admin.js');
 const lang = require('../ReadIni.js');
 const TableName = require('../TableName.js');
 
+
+
+
+
 queryRouter.post('/cat', function (req, res, next) {
-      //var query1=request.body.var1;
+
       var cat = req.body.Category;
 
 
@@ -75,8 +79,6 @@ queryRouter.post('/modify', function (req, res, next) {
 
       var DbName = req.body.DbName;
 
-      //var value=req.body.Value
-      // var toUpdate={comm_comment:"Updated"};
 
       Modify(obj, DbName, ID, res);
 
@@ -94,6 +96,8 @@ async function Modify(obj, DbName, ID, res) {
                   {
                         [pk]: ID
                   }
+
+
 
             }).then(result => {
                   console.log("success", JSON.stringify(result, null, 4));
@@ -192,9 +196,7 @@ async function Addition(Ntoadd, DbName, res) {
 
 queryRouter.post('/WorkingTeams', function (req, res, next) { //post request to db for fetching data 
 
-      /*
-            var id = req.body.ID;
-        console.log(id);*/
+
 
       admin.WorkingTeam.findAll(
             {
@@ -225,10 +227,15 @@ queryRouter.post('/language', function (req, res, next) {
 
 queryRouter.post('/show', function (req, res, next) { //post request to db for fetching data 
 
-      var id = req.body.id;
-      var attr = req.body.attributes;
-      var DbName = req.body.DbName;
+      var data = JSON.parse(req.body.DbName);
 
+      var id = data['id'];
+      var attr = data['attributes'];
+      var DbName = data['DbName'];
+
+      /* var id = req.body.id;
+       var attr = req.body.attributes;
+       var DbName = req.body.DbName;*/
       console.log(DbName);
 
       console.log(attr);
@@ -278,43 +285,53 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
                   })
       }
       else {
-            Show(id, DbName, res, attr)
+
+            console.log("DbName ", DbName);
+
+            let table = TableName.ORMTableName(DbName);
+            console.log("table ", table);
+            let pk = table.getpk();
+
+
+            let condition = {};
+            if (id) {
+                  condition[pk] = id;
+
+                  console.log("condition ", condition);
+
+            }
+
+            let attributes = null;
+            if (attr) {
+                  attributes = attr;
+
+                  console.log("attributes ", attributes);
+
+            }
+
+            let includes = null;
+
+            Show(condition, includes, attributes, table, res)
       }
 })
 
 
 
-async function Show(id, DbName, res, attr) {
+async function Show(condition, includes, attr, table, res) {
 
 
-      console.log("DbName ", DbName);
 
-      let table = TableName.ORMTableName(DbName);
-      console.log("table ", table);
-      let pk = table.getpk();
+      console.log("attributes ", attr);
 
-
-      let condition = {};
-      if (id) {
-            condition[pk] = id;
-
-            console.log("condition ", condition);
-
-      }
-
-      let attributes = [];
-      if (attr) {
-            attributes = attr;
-
-            console.log("attributes ", attributes);
-
-      }
+      console.log("includes ", includes);
 
       await table.findAll(
             {
                   where: condition,
 
-                  attributes: attr
+                  attributes: attr,
+
+                  includes: includes
 
 
             }).then(WorkingTeams => {
@@ -334,6 +351,138 @@ async function Show(id, DbName, res, attr) {
 
 
 
+
+}
+
+
+
+queryRouter.post('/collecteurEvanes', function (req, res, next) { //post request to db for fetching data 
+
+      let id = req.body.DbName;
+
+      let table = type2.Evane;
+
+      let fk = table.getfk();
+      let condition = {};
+      condition[fk] = id;
+      let includes = [
+            type4.FlowMeter,
+            type4.FlowRegulator
+      ];
+
+      let attributes = null;
+
+      Show(condition, includes, attributes, type2.Evane, res)
+
+
+})
+
+
+queryRouter.post('/evane', function (req, res, next) { //post request to db for fetching data 
+
+      let id = req.body.DbName;
+
+      let table = type2.Evane;
+
+      let pk = table.getpk();
+      let condition = {};
+      condition[pk] = id;
+
+      let includes = [
+            type4.FlowMeter,
+            type4.FlowRegulator
+      ];
+
+      let attributes = null;
+
+      Show(condition, includes, attributes, type2.Evane, res)
+
+
+})
+
+
+
+queryRouter.post('/collecteurWmeters', function (req, res, next) { //post request to db for fetching data 
+
+      let id = req.body.DbName;
+
+      let table = type3.Wmeter;
+      console.log(table);
+      let fk = type3.Wmeter.getfk();
+      console.log(fk);
+      let condition = {};
+      condition[fk] = id;
+      let includes = null
+
+      let attributes = null;
+
+      Show(condition, includes, attributes, type3.Wmeter, res)
+
+
+})
+
+
+
+queryRouter.get('/evaneUpdate', function (req, res, next) { //post request to db for fetching data 
+
+      let id = req.query.id;
+
+      let table = type2.Evane;
+      console.log(table);
+
+
+
+
+
+
+      (async () => {
+
+            let result1 = null;
+            let result2 = null;
+            let result3 = null;
+
+            result1 = await update({ 'evane_csection': 4 }, type2.Evane, id, res);
+            console.log(` result1 ${result1[0]}`);
+
+
+            if (result1[0]) {
+                  result2 = await update({ 'flow_meter_csection': 18 }, type4.FlowMeter, id, res);
+                  console.log(` result2 ${result2[0]}`);
+            }
+
+            if (result2[0]) {
+                  result3 = await update({ 'flow_regulator_csection': 4 }, type4.FlowRegulator, id, res);
+                  console.log(` result3 ${result3[0]}`);
+
+            }
+
+            if (result3[0]) {
+
+                  res.send('1');
+                  return null;
+
+            }
+
+
+
+      })()
+
+})
+
+
+async function update(obj, table, id, res) {
+      let pk = table.getpk();
+      const result = await table.update(obj,
+            {
+                  where:
+                  {
+                        [pk]: id
+                  }
+
+
+            })
+
+      return result;
 
 }
 

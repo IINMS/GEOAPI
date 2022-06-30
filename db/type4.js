@@ -179,7 +179,7 @@ FlowMeter.init({
 );
 
 FlowMeter.getpk = function () {
-  return "flowmeter_type_ID";
+  return "flow_meter_type_ID";
 }
 
 class FlowRegulator extends Model { }

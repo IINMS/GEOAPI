@@ -262,8 +262,11 @@ Wmeter.init({
 );
 
 Wmeter.getpk=function(){
-  return "wmeter_type_ID";
+  return "wmeter_ID";
 }
 
+Wmeter.getfk=function(){
+  return "wmeter_type_ID";
+}
  
 module.exports = { Tank, Stream, Drill, Struct, Wmeter };

@@ -1,0 +1,44 @@
+{
+    "elec_equip_solarpanel": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "elec_equip_battery": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "elec_equip_arduino": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "elec_equip_raspberrypi": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "elec_equip_lora_module": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "elec_equip_serial_number": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "elec_equip_part_number": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    }
+}
