@@ -1,0 +1,44 @@
+{
+    "metal_body_matterial": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "metal_body_receptors": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "metal_body_inlet_csection": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "metal_body_output_csection": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "metal_body_serial_number": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "metal_body_part_number": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "metal_body_build_date": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    }
+}

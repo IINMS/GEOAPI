@@ -7,14 +7,20 @@
     "myButton": {
         "name": "name",
         "text": "ok",
-        "xtype": "button",
-        "id": "multiselectorButton"
-    
+        "xtype": "button"
     },
-
-    "buttonMultiSelect":{
+    "buttonMultiSelect": {
         "xtype": "button",
         "text": "click",
-        "margin":"0 0 0 390"
+        "id": "multiselectorButton",
+        "margin": "0 0 0 390"
+    },
+
+
+    "buttonMultiSelect_wMeter": {
+        "xtype": "button",
+        "text": "click",
+        "id": "buttonMultiSelect_wMeterButton",
+        "margin": "0 0 0 390"
     }
 }

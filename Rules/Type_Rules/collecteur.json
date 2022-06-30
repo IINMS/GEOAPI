@@ -3,8 +3,19 @@
         "FieldType": "06_MultiSelector",
         "Data": {
             "selected": "",
+            "id": "multi_wmeter",
             "dbData": {
-                "call":"onClick"
+                "call": "GetWmeters"
+            }
+        }
+    },
+    "buttonItem_wMeter": {
+        "FieldType": "07_buttonMultiSelect_wMeter",
+        "Data": {
+            "allowBlank": true,
+            "listenerID": "buttonMultiSelect_wMeterButton",
+            "rule_listeners": {
+                "click": "multiselectorClick_wmeter"
             }
         }
     },
@@ -14,7 +25,7 @@
             "allowBlank": true,
             "listenerID": "button_elecEquipmentButton",
             "rule_listeners": {
-                "click": "onClick"
+                "click": "ClickElecEquipment"
             }
         }
     },
@@ -24,20 +35,28 @@
             "allowBlank": true,
             "listenerID": "button_buttonTextfield",
             "rule_listeners": {
-                "click": "onClick"
+                "click": "ClickMetalBody"
             }
         }
     },
     "_elec_vane": {
         "FieldType": "06_MultiSelector",
         "Data": {
-            "selected": ""
+            "selected": "",
+            "id": "multi_elec_vane",
+            "dbData": {
+                "call": "GetElectricVanes"
+            }
         }
     },
     "buttonItem": {
         "FieldType": "07_buttonMultiSelect",
         "Data": {
-            "allowBlank": true
+            "allowBlank": true,
+            "listenerID": "multiselectorButton",
+            "rule_listeners": {
+                "click": "multiselectorClick"
+            }
         }
     }
 }

@@ -3,18 +3,17 @@ const foreign = require('./db/foreignTablesStage4.js');
 const type1 = require('./db/type1.js');
 const type2 = require('./db/type2.js');
 const type3 = require('./db/type3.js');
+const type4 = require('./db/type4.js');
 
 const special = require('./db/special.js');
 const admin = require('./db/admin.js');
 
-ORMTableName = function(tableName)
-{
+ORMTableName = function (tableName) {
 
 
       var ORMequivalent = null;
 
-      switch (tableName)
-      {
+      switch (tableName) {
 
             case "valves_with_rel_id":
 
@@ -182,6 +181,18 @@ ORMTableName = function(tableName)
 
             case "Tasks":
                   ORMequivalent = admin.Tasks;
+
+                  break;
+
+
+            case "type_elec_equip":
+                  ORMequivalent = type4.ElectronicEquipment;
+
+                  break;
+
+
+            case "type_metal_body":
+                  ORMequivalent = type4.MetalBody;
 
                   break;
 

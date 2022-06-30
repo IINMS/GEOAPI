@@ -110,8 +110,8 @@ Comm.hasMany(Evane,{foreignKey: 'evane_type_ID',});
 Evane.belongsTo(Comm,{  foreignKey: 'evane_type_ID'});
 
 
-//Evane.hasOne(FlowMeter,{foreignKey: 'flow_meter_type_ID'});
-//FlowMeter.belongsTo(Evane,{ foreignKey: 'flow_meter_type_ID'});
+Evane.hasOne(FlowMeter,{foreignKey: 'flow_meter_type_ID'});
+FlowMeter.belongsTo(Evane,{ foreignKey: 'flow_meter_type_ID'});
 
 
  

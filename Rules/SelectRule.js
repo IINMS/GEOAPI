@@ -41,12 +41,20 @@ TableRules = function (name) {
                   return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
 
 
-
-
             case "type_drill":
                   return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
 
+            case "type_elec_equip":
+                  return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
 
+            case "type_metal_body":
+                  return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
+
+            case "type_wmeter":
+                  return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
+
+            case "type_evane":
+                  return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
 
             case "personnel":
             case "working_team":
