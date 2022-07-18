@@ -65,7 +65,9 @@ ElectronicEquipment.getpk = function () {
   return "elec_equip_type_ID";
 }
 
-
+ElectronicEquipment.getfk=function(){
+  return "elec_equip_type_ID";
+}
 
 /*
   class WmeterEvane extends Model { }
