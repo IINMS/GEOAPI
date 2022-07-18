@@ -55,7 +55,7 @@
             "allowBlank": true,
             "listenerID": "multiselectorButton",
             "rule_listeners": {
-                "click": "multiselectorClick"
+                "click": "multiselectorClick_evane"
             }
         }
     }

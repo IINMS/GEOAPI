@@ -141,7 +141,7 @@ queryRouter.post('/insert', function (req, res, next) { //post request to db for
 queryRouter.post('/addition', function (req, res, next) { //post request to db for fetching data 
 
       var id = req.body.ID;
-      
+
       var table = TableName.ORMTableName(req.body.DbName);
 
       console.log("id ", id);
@@ -156,7 +156,7 @@ queryRouter.post('/addition', function (req, res, next) { //post request to db f
 
 
       var DbName = req.body.DbName;
-      
+
       Addition(Ntoadd, DbName, res);
 
 
@@ -171,7 +171,7 @@ async function Addition(Ntoadd, DbName, res) {
 
       var table = TableName.ORMTableName(DbName);
       //    console.log("DataObj ", table);
-    
+
       await table.create(Ntoadd).then(usersData => {
 
             console.log("All users:", JSON.stringify(usersData, null, 4));
@@ -213,7 +213,7 @@ queryRouter.post('/WorkingTeams', function (req, res, next) { //post request to 
 })
 
 queryRouter.post('/language', function (req, res, next) {
-      let language = req.body.DbName;
+      let language = req.body.data;
       console.log(language)
       let langData = lang.LangIni(language);
 
@@ -227,18 +227,19 @@ queryRouter.post('/language', function (req, res, next) {
 
 queryRouter.post('/show', function (req, res, next) { //post request to db for fetching data 
 
-      var data = JSON.parse(req.body.DbName);
+      
+
+      var data = JSON.parse(req.body.data);
 
       var id = data['id'];
       var attr = data['attributes'];
       var DbName = data['DbName'];
 
-      /* var id = req.body.id;
-       var attr = req.body.attributes;
-       var DbName = req.body.DbName;*/
+
       console.log(DbName);
 
-      console.log(attr);
+      // console.log(attr);
+
 
 
       if (DbName == "comm") {
@@ -272,7 +273,8 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
 
 
 
-                        ]
+                        ],
+
 
 
 
@@ -311,7 +313,18 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
 
             let includes = null;
 
-            Show(condition, includes, attributes, table, res)
+
+            (async () => {
+
+                  let dt = await Show(condition, includes, attributes, table, res);
+                  console.log(JSON.stringify(dt, null, 4));
+
+                  res.send({ users: dt });
+
+
+
+            })()
+
       }
 })
 
@@ -325,31 +338,51 @@ async function Show(condition, includes, attr, table, res) {
 
       console.log("includes ", includes);
 
-      await table.findAll(
+      const resData = await table.findAll(
             {
                   where: condition,
 
                   attributes: attr,
 
-                  includes: includes
+                  include: includes
 
 
-            }).then(WorkingTeams => {
-                  console.log("All users:", JSON.stringify(WorkingTeams, null, 4));
-                  res.send(
-                        {
-                              users: WorkingTeams
-
-                        })
-            })
-            .catch(function (err) {
-                  console.log(JSON.stringify(err, null, 4));
-                  res.send('0'); //0 Error
 
 
-            })
 
 
+            });
+
+ 
+      return resData;
+
+
+
+
+      /*  await table.findAll(
+              {
+                    where: condition,
+  
+                    attributes: attr,
+  
+                    include: includes,
+  
+  
+  
+              }).then(WorkingTeams => {
+                    console.log("All users:", JSON.stringify(WorkingTeams, null, 4));
+                    res.send(
+                          {
+                                users: WorkingTeams
+  
+                          })
+              })
+              .catch(function (err) {
+                    console.log(JSON.stringify(err, null, 4));
+                    res.send('0'); //0 Error
+  
+  
+              }) */
 
 
 }
@@ -358,7 +391,7 @@ async function Show(condition, includes, attr, table, res) {
 
 queryRouter.post('/collecteurEvanes', function (req, res, next) { //post request to db for fetching data 
 
-      let id = req.body.DbName;
+      let id = req.body.data;
 
       let table = type2.Evane;
 
@@ -372,7 +405,25 @@ queryRouter.post('/collecteurEvanes', function (req, res, next) { //post request
 
       let attributes = null;
 
-      Show(condition, includes, attributes, type2.Evane, res)
+
+
+      (async () => {
+            try {
+                  let dt = await Show(condition, includes, attributes, type2.Evane, res);
+      
+
+                   res.send({ users: dt })
+
+       
+
+
+
+            } catch (err) {
+
+                  console.log(err)
+            }
+
+      })()
 
 
 })
@@ -380,8 +431,11 @@ queryRouter.post('/collecteurEvanes', function (req, res, next) { //post request
 
 queryRouter.post('/evane', function (req, res, next) { //post request to db for fetching data 
 
-      let id = req.body.DbName;
+      let data = JSON.parse(req.body.data);
+      console.log(`data ${data}`)
 
+      let id = data['id'];
+      console.log(`id ${id}`)
       let table = type2.Evane;
 
       let pk = table.getpk();
@@ -395,7 +449,21 @@ queryRouter.post('/evane', function (req, res, next) { //post request to db for 
 
       let attributes = null;
 
-      Show(condition, includes, attributes, type2.Evane, res)
+
+
+      (async () => {
+            let dt = await Show(condition, includes, attributes, type2.Evane, res);
+            console.log(JSON.stringify(dt, null, 4));
+
+            const obj = JSON.parse(JSON.stringify(dt[0], null, 4));
+            const tempobj = Object.assign({}, obj)
+            delete tempobj.type_flow_meter;
+            delete tempobj.type_flow_regulator;
+
+             const dataObj = Object.assign(obj.type_flow_regulator, Object.assign(obj.type_flow_meter, tempobj));
+            res.send({ users: [dataObj] })
+
+      })()
 
 
 })
@@ -404,7 +472,7 @@ queryRouter.post('/evane', function (req, res, next) { //post request to db for 
 
 queryRouter.post('/collecteurWmeters', function (req, res, next) { //post request to db for fetching data 
 
-      let id = req.body.DbName;
+      let id = req.body.data;
 
       let table = type3.Wmeter;
       console.log(table);
@@ -416,20 +484,52 @@ queryRouter.post('/collecteurWmeters', function (req, res, next) { //post reques
 
       let attributes = null;
 
-      Show(condition, includes, attributes, type3.Wmeter, res)
 
+      (async () => {
+            let dt = await Show(condition, includes, attributes, type3.Wmeter, res);
+            console.log(JSON.stringify(dt, null, 4));
+
+            res.send({ users: dt })
+
+      })()
 
 })
 
 
 
-queryRouter.get('/evaneUpdate', function (req, res, next) { //post request to db for fetching data 
+queryRouter.post('/evaneUpdate', function (req, res, next) { //post request to db for fetching data 
 
-      let id = req.query.id;
+      let id = req.body.ID;
+      console.log(id);
+
+      let DataObj = req.body.DataObj;
+      DataObj = Object.entries(JSON.parse(DataObj));
+      console.log(` new data ${DataObj} `);
+
+      let previousData = req.body.previousData;
+      previousData = Object.entries(JSON.parse(previousData));
+      console.log(`previous data ${previousData} `);
 
       let table = type2.Evane;
       console.log(table);
+      // console.log(DataObj)
 
+      const evaneObj = DataObj.filter(item => item[0].includes('evane_'));
+      const flowMeterObj = DataObj.filter(item => item[0].includes('flow_meter_'));
+      const flowRegulatorObj = DataObj.filter(item => item[0].includes('flow_regulator_'));
+
+      console.log(Object.fromEntries(evaneObj));
+      console.log(Object.fromEntries(flowMeterObj));
+      console.log(Object.fromEntries(flowRegulatorObj));
+
+
+      const evaneObjPreviousValues = previousData.filter(item => item[0].includes('evane_'));
+      const flowMeterObjPreviousValues = previousData.filter(item => item[0].includes('flow_meter_'));
+      const flowRegulatorObjPreviousValues = previousData.filter(item => item[0].includes('flow_regulator_'));
+
+      console.log(Object.fromEntries(evaneObjPreviousValues));
+      console.log(Object.fromEntries(flowMeterObjPreviousValues));
+      console.log(Object.fromEntries(flowRegulatorObjPreviousValues));
 
 
 
@@ -441,27 +541,46 @@ queryRouter.get('/evaneUpdate', function (req, res, next) { //post request to db
             let result2 = null;
             let result3 = null;
 
-            result1 = await update({ 'evane_csection': 4 }, type2.Evane, id, res);
-            console.log(` result1 ${result1[0]}`);
+            try {
+                  result1 = await update(Object.fromEntries(evaneObj), type2.Evane, id, res);
+                  console.log(` result1 ${result1[0]}`);
 
 
-            if (result1[0]) {
-                  result2 = await update({ 'flow_meter_csection': 18 }, type4.FlowMeter, id, res);
+                  result2 = await update(Object.fromEntries(flowMeterObj), type4.FlowMeter, id, res);
                   console.log(` result2 ${result2[0]}`);
-            }
 
-            if (result2[0]) {
-                  result3 = await update({ 'flow_regulator_csection': 4 }, type4.FlowRegulator, id, res);
+                  result3 = await update(Object.fromEntries(flowRegulatorObj), type4.FlowRegulator, id, res);
                   console.log(` result3 ${result3[0]}`);
 
-            }
 
-            if (result3[0]) {
 
                   res.send('1');
-                  return null;
+
+
+
+            } catch (err) {
+
+                  console.log(err)
+
+
+                  result1 = await update(Object.fromEntries(evaneObjPreviousValues), type2.Evane, id, res);
+              
+                  console.log(result1);
+
+
+                  result2 = await update(Object.fromEntries(flowMeterObjPreviousValues), type4.FlowMeter, id, res);
+                  console.log(` result2 ${result2[0]}`);
+
+
+
+                  result3 = await update(Object.fromEntries(flowRegulatorObjPreviousValues), type4.FlowRegulator, id, res);
+                  console.log(` result3 ${result3[0]}`);
+
+                  res.send('0');
+
 
             }
+
 
 
 
@@ -472,6 +591,7 @@ queryRouter.get('/evaneUpdate', function (req, res, next) { //post request to db
 
 async function update(obj, table, id, res) {
       let pk = table.getpk();
+      // console.log(obj)
       const result = await table.update(obj,
             {
                   where:

@@ -80,7 +80,7 @@
     "flow_regulator_build_date": {
         "FieldType": "01_datefield",
         "Data": {
-            "allowBlank": false
+            "allowBlank": true
         }
     },
     "flow_meter_csection": {
@@ -134,7 +134,7 @@
     "flow_meter_build_date": {
         "FieldType": "01_datefield",
         "Data": {
-            "allowBlank": false
+            "allowBlank": true
         }
     }
 }
