@@ -27,7 +27,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start": "redis-server start 2>&1 & nodemon API/HttpServer.js"
+    "start": "nodemon API/HttpServer.js"
   },
   "keywords": [],
   "author": "",

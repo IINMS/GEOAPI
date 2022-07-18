@@ -44,5 +44,20 @@
                 "id": "button_elecEquipmentButton"
             }
         ]
+    },
+    "coordsTextfield": {
+        "xtype": "fieldcontainer",
+         "layout": "hbox",
+        "items": [
+            {
+                "xtype": "textfield"
+               
+            },
+            {
+                "xtype": "button",
+                "text": "click"
+                 
+            }
+        ]
     }
 }

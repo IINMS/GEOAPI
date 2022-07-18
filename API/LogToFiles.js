@@ -28,7 +28,7 @@ router.post('/Image', function (req, res) {
         level: 'info',
         action:'Login',
       //  message: req.body.DbName
-        user:req.body.DbName[0]
+        user:req.body.data[0]
       });
 
       
@@ -45,7 +45,7 @@ router.post('/UserLogOut', function (req, res) {
     level: 'info',
     action:'LogOut',
   //  message: req.body.DbName
-    user:req.body.DbName[0]
+    user:req.body.data[0]
   });
 
 
@@ -58,16 +58,16 @@ res.send({"ok":""} );
 
 router.post('/FormLog', function (req, res) {
 
-  //console.log(JSON.stringify(req.body.DbName[1]))
-  //console.log(JSON.parse( req.body.DbName[1]));
+  console.log((req.body))
+ // console.log(req.body);
  
   logAction.Formlog.log({
     level: 'info',
-    form: req.body.DbName[2],
+    form: req.body.data[2],
     action:'submit',
-    user:req.body.DbName[0],
-    previousData:req.body.DbName[3],
-    data:req.body.DbName[1]
+    user:req.body.data[0],
+    previousData:req.body.data[3],
+    data:req.body.data[1]
    // message: req.body.DbName,
     
     

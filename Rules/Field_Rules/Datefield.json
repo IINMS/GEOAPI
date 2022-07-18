@@ -1,14 +1,7 @@
 {
-     
     "datefield": {
-        
-        
-			"xtype": "datefield",
-            "width":"90%",
-
- 
-			"format": "Y-m-d H:i:s P"
-		 
-	 
+        "xtype": "datefield",
+        "width": "90%",
+        "format": "Y-m-d H:i:s P"
     }
 }

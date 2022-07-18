@@ -53,7 +53,7 @@ ORMTableName = function (tableName) {
                   ORMequivalent = foreign.KOLEKTER;
                   break;
             case "comm_":
-
+            case "collecteur":
                   ORMequivalent = common.Comm;
                   break;
 

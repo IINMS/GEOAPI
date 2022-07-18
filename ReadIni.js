@@ -62,14 +62,10 @@ ReadFile = function (files, dirName) { //Reads all the ini files of a folder
 
 
 
-		if (file.includes("comm"))
-			data[file] = config;
 
-		if (!file.includes("comm")) {
-			for (let [key, value] of Object.entries(config))
-				data[key] = config[key]
+		for (let [key, value] of Object.entries(config))
+			data[key] = config[key]
 
-		}
 
 	})
 

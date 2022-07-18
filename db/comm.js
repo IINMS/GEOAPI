@@ -23,7 +23,7 @@ Comm.init({
       allowNull: false
   },
   comm_layer_coords:{
-     type: Sequelize.GEOMETRY('POINT') ,
+     type: Sequelize.GEOMETRY('POINT'),
       allowNull: false
   },
    comm_comment:{

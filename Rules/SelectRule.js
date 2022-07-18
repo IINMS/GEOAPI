@@ -13,7 +13,7 @@ TableRules = function (name) {
 
 
 
-            case "Comm_":
+            case "comm_":
 
                   return ReadFile.ReadJsonFile(CommRulesPath + "/" + name + ".json");
 

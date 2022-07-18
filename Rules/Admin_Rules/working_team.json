@@ -70,7 +70,11 @@
   "Data": {
     "displayField": "Name",
     "valueField": "Occupation",
-    "selected":""
+    "selected":"",
+    "dbData": {
+      "call": "GetPersonnel"
+  }
+
   },
 
  

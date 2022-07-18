@@ -39,19 +39,19 @@ app.use('/resources', express.static('resources'));
 app.use('/app', express.static('app'));
 app.use('/ext', express.static('ext'));
 app.use(bodyParser.json(
-{
-      limit: '10mb'
-}));
+      {
+            limit: '10mb'
+      }));
 app.use(bodyParser.urlencoded(
-{
-      extended: true,
-      limit: '10mb'
-}));
+      {
+            extended: true,
+            limit: '10mb'
+      }));
 
 
 
 app.use(cors());
- 
+
 const Logger = require('./LogToFiles');
 app.use('/logger', Logger);
 
@@ -67,32 +67,62 @@ app.use('/query', Query);
 
 
 
-app.get('/greet', function(req, res, next)
-{
+app.get('/greet', function (req, res, next) {
       res.send("{Hello}");
 })
 
 
-app.post('/WriteToFs', function(req, res, next)
-{
+app.post('/WriteToFs', function (req, res, next) {
 
-      let file = req.body.DbName;
-      file = JSON.parse(req.body.DbName);
+      let file = req.body.data;
+      console.log(req.body.data)
+      file = JSON.parse(req.body.data);
       // strip off the data: url prefix to get just the base64-encoded bytes
       //var data = file.replace(/^data:application\/\w+;base64,/, "");
       let length = Buffer.byteLength(file.data, 'base64');
       let buf = Buffer.alloc(length, file.data, 'base64');
 
-      let path = file.path + "/" + file.name;
+      let path = file.path + "/" + file.folderName;
       //Wfile(path,res,buf)
 
-      fs.writeFile(path, buf, (err) =>
-      {
-            if (err) throw err;
+      try {
 
-            console.log('The "data to append" was appended to file!');
 
-      });
+
+
+            if (!fs.existsSync(path)) 
+                  fs.mkdirSync(path);
+
+            if (fs.existsSync(path+"/"+ file.previousFile))
+                  fs.unlinkSync(path + "/" + file.previousFile)
+
+            fs.writeFile(path + "/" + file.name, buf, (err) => {
+                  if (err) throw err;
+
+                  console.log('The "data to append" was appended to file!');
+
+            });
+
+      } catch (err) {
+            console.error(err);
+      }
+
+      /*  fs.exists(file.path + "/" + file.folderName, function (error) {
+              if (error) {
+                    fs.mkdir(file.path + "/" + file.folderName);
+              } else {
+                    console.log("Directory exists.")
+              }
+  
+  
+              fs.writeFile(path, buf, (err) => {
+                    if (err) throw err;
+  
+                    console.log('The "data to append" was appended to file!');
+  
+              });
+  
+        })*/
 
       res.end();
 })
@@ -105,16 +135,14 @@ app.post('/WriteToFs', function(req, res, next)
 
 
 
-app.post('/lang', function(req, res, next)
-{
+app.post('/lang', function (req, res, next) {
       console.log("lang ", lang.LangIni());
       res.send(lang.LangIni())
 })
 
 
 
-app.post('/modify', function(req, res, next)
-{
+app.post('/modify', function (req, res, next) {
 
 
 
@@ -137,30 +165,33 @@ app.post('/modify', function(req, res, next)
 
 })
 
-async function Modify(obj, DbName, ID, ID_Value, res)
-{
+
+function CheckExistence() {
+
+
+}
+
+async function Modify(obj, DbName, ID, ID_Value, res) {
 
       var table = TableName.ORMTableName(DbName); //Returns the table "function" 
 
       await table.update(JSON.parse(obj),
-      {
-            where:
             {
-                  [ID]: ID_Value
-            }
+                  where:
+                  {
+                        [ID]: ID_Value
+                  }
 
-      }).then(result =>
-      {
-            console.log("success", JSON.stringify(result, null, 4));
-            // sequelize.save();
-            res.send('1');
-      }).catch(function(err)
-      {
+            }).then(result => {
+                  console.log("success", JSON.stringify(result, null, 4));
+                  // sequelize.save();
+                  res.send('1');
+            }).catch(function (err) {
 
 
-            console.log("\x1b[31m", "Error", JSON.stringify(err, null, 4), "\x1b[0m"); //"\x1b[0m" reset //"\x1b[31m" red
-            res.send('0');
-      })
+                  console.log("\x1b[31m", "Error", JSON.stringify(err, null, 4), "\x1b[0m"); //"\x1b[0m" reset //"\x1b[31m" red
+                  res.send('0');
+            })
 }
 
 
@@ -168,8 +199,7 @@ async function Modify(obj, DbName, ID, ID_Value, res)
 
 
 var httpsServer = https.createServer(credentials, app);
-httpsServer.listen(8443, function()
-{
+httpsServer.listen(8443, function () {
       var host = httpsServer.address().address;
       var port = httpsServer.address().port;
       httpsServer.setTimeout(500000);

@@ -19,12 +19,15 @@
             "FieldType": "00_textfield",
             "Data": {
                 "allowBlank": true
+                
             }
         },
         "comm_coord_rel": {
             "FieldType": "00_textfield",
             "Data": {
-                "allowBlank": true
+                "allowBlank": true,
+                "coords": true
+                
             }
         },
         "comm_date_manuf": {
@@ -36,7 +39,11 @@
         "comm_doc_rel_path": {
             "FieldType": "11_filefield",
             "Data": {
-                "allowBlank": true
+                "allowBlank": true,
+                "attachButton": {
+                    "type": "doc",
+                    "filetype":"document"
+                }
             }
         },
         "comm_date_placed": {
@@ -54,7 +61,12 @@
         "comm_img_rel_path": {
             "FieldType": "11_filefield",
             "Data": {
-                "allowBlank": true
+                "allowBlank": true,
+                "attachButton": {
+                    "type": "img",
+                    "filetype":"image"
+
+                }
             }
         },
         "comm_int_std": {
@@ -66,7 +78,8 @@
         "comm_layer_coords": {
             "FieldType": "00_textfield",
             "Data": {
-                "allowBlank": true
+                "allowBlank": true,
+                "coords": true
             }
         },
         "comm_make_manuf": {
