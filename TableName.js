@@ -200,6 +200,14 @@ ORMTableName = function (tableName) {
                   ORMequivalent = type4.MetalBody;
 
                   break;
+            case "type_flow_meter":
+                  ORMequivalent = type4.FlowMeter;
+
+                  break;
+            case "type_flow_regulator":
+                  ORMequivalent = type4.FlowRegulator;
+
+                  break;
 
 
       }

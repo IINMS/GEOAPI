@@ -4,7 +4,8 @@ const filterRouter = express.Router();
 const conn = require('../db/connect.js');
 const lang = require('../ReadIni.js');
 const TableName = require('../TableName.js');
-
+const ReadFile = require('../ReadFile');
+const fs = require('fs');
 
 
 filterRouter.post('/filterRawQuery', function (req, res, next) { //post request to db
@@ -174,6 +175,8 @@ filterRouter.get('/getORMTableName', function (req, res, next) { //post request 
 	
 	var dbTableName = req.query.tableName
 	var dbFieldName = req.query.fieldName
+	console.log((dbTableName))
+	console.log((dbFieldName))
 	var table = TableName.ORMTableName(dbTableName);	
 	res.send({ filter: table.rawAttributes[dbFieldName].type.key })
 })
@@ -184,5 +187,28 @@ filterRouter.get('/langData', function (req, res, next) { //post request to db
 	var filenames = lang.ReadDir("filter");
 	var filterFields = lang.ReadFile(filenames, "filter");
 	res.send({ langDataFromIni: langData, filterFields: filterFields })
+})
+filterRouter.get('/pk', function (req, res, next) { //post request to db
+	var DbName=req.query.tableName
+	var table = TableName.ORMTableName(DbName); //Returns the table "function" 
+    var pk = table.getpk();
+	console.log("pk"+pk)
+	
+	res.send({pk})
+})
+filterRouter.get('/fk', function (req, res, next) { //post request to db
+	var DbName=req.query.tableName
+	var table = TableName.ORMTableName(DbName); //Returns the table "function" 
+    var fk = table.getfk();
+	console.log("fk"+fk)
+	
+	res.send({fk})
+})
+filterRouter.get('/complexTable', function (req, res, next) { //post request to db
+	console.log('/complexTable')
+	var labelId=req.query.labelId
+	console.log(labelId)
+	var file = ReadFile.ReadJsonFile("filter/"+labelId +".json");
+	res.send({file})
 })
 module.exports = filterRouter;
