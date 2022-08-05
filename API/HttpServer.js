@@ -166,10 +166,7 @@ app.post('/modify', function (req, res, next) {
 })
 
 
-function CheckExistence() {
 
-
-}
 
 async function Modify(obj, DbName, ID, ID_Value, res) {
 

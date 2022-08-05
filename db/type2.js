@@ -9,7 +9,8 @@ class Evane extends Model { }
 Evane.init({
 //text to integer evane_ID
   evane_ID: {
-    type: Sequelize.TEXT,
+    type: Sequelize.INTEGER,
+    autoIncrement: true,
     primaryKey: true,
   },
   evane_type_ID: {
@@ -71,8 +72,7 @@ Evane.getpk = function () {
 Evane.getfk = function () {
   return "evane_type_ID";
 }
-
-
+ 
 class Airvac extends Model { }
 Airvac.init({
   airvac_type_ID: {

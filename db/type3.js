@@ -211,8 +211,9 @@ class Wmeter extends Model { }
 Wmeter.init({
   // attributes
   wmeter_ID: {
-    type: Sequelize.TEXT,
+    type: Sequelize.INTEGER,
     primaryKey: true,
+    autoIncrement: true,
     allowNull: false
   },
   wmeter_type_ID: {

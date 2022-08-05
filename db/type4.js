@@ -126,10 +126,11 @@ ElectronicEquipment.getfk=function(){
   }*/
 
 
+
 class FlowMeter extends Model { }
 FlowMeter.init({
   flow_meter_type_ID: {
-    type: Sequelize.TEXT,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     allowNull: false
   },
@@ -190,7 +191,7 @@ FlowMeter.getfk=function(){
 class FlowRegulator extends Model { }
 FlowRegulator.init({
   flow_regulator_type_ID: {
-    type: Sequelize.TEXT,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     allowNull: false
   },
