@@ -48,6 +48,7 @@ async function fetchData(req, res, next) {
 			//console.log(cacheObj.seconds);		
 			//console.log(cacheObj.redis);
 			//return{ filter: results ,tableName:dbTableName,field:field}
+			
 			res.send({ filter: results ,tableName:dbTableName,field:field})
 		})
 	
@@ -175,8 +176,7 @@ filterRouter.get('/getORMTableName', function (req, res, next) { //post request 
 	
 	var dbTableName = req.query.tableName
 	var dbFieldName = req.query.fieldName
-	console.log((dbTableName))
-	console.log((dbFieldName))
+	
 	var table = TableName.ORMTableName(dbTableName);	
 	res.send({ filter: table.rawAttributes[dbFieldName].type.key })
 })
@@ -192,22 +192,22 @@ filterRouter.get('/pk', function (req, res, next) { //post request to db
 	var DbName=req.query.tableName
 	var table = TableName.ORMTableName(DbName); //Returns the table "function" 
     var pk = table.getpk();
-	console.log("pk"+pk)
+	
 	
 	res.send({pk})
 })
 filterRouter.get('/fk', function (req, res, next) { //post request to db
-	var DbName=req.query.tableName
+	var DbName=req.query.tableName	
 	var table = TableName.ORMTableName(DbName); //Returns the table "function" 
     var fk = table.getfk();
-	console.log("fk"+fk)
+	
 	
 	res.send({fk})
 })
 filterRouter.get('/complexTable', function (req, res, next) { //post request to db
 	console.log('/complexTable')
 	var labelId=req.query.labelId
-	console.log(labelId)
+	
 	var file = ReadFile.ReadJsonFile("filter/"+labelId +".json");
 	res.send({file})
 })

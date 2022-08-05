@@ -73,6 +73,9 @@ Tank.init({
 Tank.getpk=function(){
   return "tank_type_ID";
 }
+Tank.getfk=function(){
+  return "tank_type_ID";
+}
 
 class Stream extends Model { }
 Stream.init({
@@ -104,6 +107,9 @@ Stream.init({
 
 );
 Stream.getpk=function(){
+  return "stream_type_ID";
+}
+Stream.getfk=function(){
   return "stream_type_ID";
 }
 
@@ -163,6 +169,9 @@ Drill.init({
 Drill.getpk=function(){
   return "drill_type_ID";
 }
+Drill.getfk=function(){
+  return "drill_type_ID";
+}
 
 class Struct extends Model { }
 Struct.init({
@@ -192,6 +201,9 @@ Struct.init({
 );
 
 Struct.getpk=function(){
+  return "struct_type_ID";
+}
+Struct.getfk=function(){
   return "struct_type_ID";
 }
 

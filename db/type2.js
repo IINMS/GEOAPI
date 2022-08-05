@@ -7,7 +7,7 @@ const Model = Sequelize.Model;
 
 class Evane extends Model { }
 Evane.init({
-
+//text to integer evane_ID
   evane_ID: {
     type: Sequelize.INTEGER,
     autoIncrement: true,
@@ -117,6 +117,9 @@ Airvac.init({
 Airvac.getpk = function () {
   return "airvac_type_ID";
 }
+Airvac.getfk = function () {
+  return "airvac_type_ID";
+}
 
 class Evac extends Model { }
 Evac.init({
@@ -144,6 +147,9 @@ Evac.init({
 );
 
 Evac.getpk = function () {
+  return "evac_type_ID";
+}
+Evac.getfk = function () {
   return "evac_type_ID";
 }
 
@@ -211,6 +217,9 @@ Shutter.init({
 Shutter.getpk = function () {
   return "shutter_type_ID";
 }
+Shutter.getfk = function () {
+  return "shutter_type_ID";
+}
 
 
 class Cpoint extends Model { }
@@ -267,6 +276,9 @@ Cpoint.init({
 );
 
 Cpoint.getpk = function () {
+  return "cpoint_type_ID";
+}
+Cpoint.getfk = function () {
   return "cpoint_type_ID";
 }
 
