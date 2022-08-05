@@ -8,6 +8,7 @@ const type4 = require('./db/type4.js');
 const special = require('./db/special.js');
 const admin = require('./db/admin.js');
 const filter = require('./db/filter.js');
+const privil = require('./db/Privil.js');
 
 ORMTableName = function (tableName) {
 
@@ -206,6 +207,12 @@ ORMTableName = function (tableName) {
                   break;
             case "type_flow_regulator":
                   ORMequivalent = type4.FlowRegulator;
+
+                  break;
+
+
+            case "usercat":
+                  ORMequivalent = privil.UserCat;
 
                   break;
 

@@ -2,7 +2,8 @@
     "wmeter_type_ID": {
         "FieldType": "00_textfield",
         "Data": {
-            "allowBlank": true
+            "allowBlank": true,
+            "hidden":true
         }
     },
     "wmeter_csection": {

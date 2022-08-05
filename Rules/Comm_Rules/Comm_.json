@@ -103,7 +103,8 @@
         "comm_rel_FID": {
             "FieldType": "00_textfield",
             "Data": {
-                "allowBlank": true
+                "allowBlank": true,
+                "hidden":true
             }
         },
         "comm_repair": {

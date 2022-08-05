@@ -37,4 +37,12 @@ const Model=Sequelize.Model;
 //common.Comm.sync({alter: true })
 
 //sequelize.sync({alter: true })
+//type2.Evane.sync({alter:true})
+
+ 
+//type4.FlowMeter.sync({force:true})
+//type4.FlowRegulator.sync({force:true})
+ 
+//privil.UserCat.sync({force:true})
+
 module.exports = { privil};
