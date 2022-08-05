@@ -1,5 +1,5 @@
 {
-    "type_evane":["type_flow_meter","type_flow_regulator"],
+    "type_evane":[],
     "type_elec_equip":[],
     "type_metal_body":[],
     "type_wmeter":[]

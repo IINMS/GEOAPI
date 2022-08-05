@@ -183,6 +183,9 @@ FlowMeter.init({
 FlowMeter.getpk = function () {
   return "flow_meter_type_ID";
 }
+FlowMeter.getfk=function(){
+  return "flow_meter_type_ID";
+}
 
 class FlowRegulator extends Model { }
 FlowRegulator.init({
@@ -232,6 +235,9 @@ FlowRegulator.init({
 );
 
 FlowRegulator.getpk = function () {
+  return "flow_regulator_type_ID";
+}
+FlowRegulator.getfk = function () {
   return "flow_regulator_type_ID";
 }
 
@@ -287,6 +293,9 @@ MetalBody.init({
 );
 
 MetalBody.getpk = function () {
+  return "metal_body_type_ID";
+}
+MetalBody.getfk = function () {
   return "metal_body_type_ID";
 }
 

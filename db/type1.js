@@ -38,7 +38,9 @@ Duct.init({
 Duct.getpk=function(){
   return "duct_type_ID";
 }
- 
+Duct.getfk=function(){
+  return "duct_type_ID";
+}
 
 class Keyshut extends Model { }
 Keyshut.init({
@@ -78,7 +80,9 @@ Keyshut.init({
   Keyshut.getpk=function(){
     return "keyshut_type_ID";
   }
- 
+  Keyshut.getfk=function(){
+    return "keyshut_type_ID";
+  }
 
 class Depress extends Model { }
 Depress.init({
@@ -109,6 +113,9 @@ Depress.init({
 Depress.getpk=function(){
   return "depress_type_ID";
 }
+Depress.getfk=function(){
+  return "depress_type_ID";
+}
 
 class Acc extends Model { }
 Acc.init({
@@ -133,6 +140,9 @@ Acc.init({
   );
 
   Acc.getpk=function(){
+    return "acc_type_ID";
+  }
+  Acc.getfk=function(){
     return "acc_type_ID";
   }
 
@@ -193,7 +203,9 @@ Relvalve.init({
 Relvalve.getpk=function(){
   return "relvalve_type_ID";
 }
-
+Relvalve.getfk=function(){
+  return "relvalve_type_ID";
+}
  
 
 class Vane extends Model {
@@ -260,7 +272,9 @@ Vane.init({
   Vane.getpk=function(){
      return "vane_type_ID";
   }
-
+  Vane.getfk=function(){
+    return "vane_type_ID";
+ }
  //Vane.sync();
 
 module.exports = { Duct, Keyshut, Depress, Acc, Relvalve, Vane };

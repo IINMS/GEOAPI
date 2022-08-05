@@ -34,7 +34,7 @@ queryRouter.post('/cat', function (req, res, next) {
                   attributes: ['Workspace'],
                   where:
                   {
-                        UserCatID: cat
+                        UserRole: cat
                   }
             }).then(users => {
                   console.log("All users:", JSON.stringify(users, null, 4));
@@ -333,7 +333,7 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
 async function Show(condition, includes, attr, table, res) {
 
 
-
+      console.log("condition ",condition)
       console.log("attributes ", attr);
 
       console.log("includes ", includes);
