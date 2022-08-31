@@ -1,0 +1,18 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/mapgiseu/nodejsapp
+    - /bin/cp comm_el_gr.ini $DEPLOYPATH
+    - /bin/cp comm_en_us.ini $DEPLOYPATH
+    - /bin/cp Logger.js $DEPLOYPATH 
+    - /bin/cp psqlquerying.js $DEPLOYPATH 
+    - /bin/cp ReadFile.ini $DEPLOYPATH
+    - /bin/cp ReadIni.ini $DEPLOYPATH
+    - /bin/cp TableName.js $DEPLOYPATH
+    - /bin/cp -R API $DEPLOYPATH
+    - /bin/cp -R db $DEPLOYPATH
+    - /bin/cp -R el_gr $DEPLOYPATH
+    - /bin/cp -R en_us $DEPLOYPATH
+    - /bin/cp -R filter $DEPLOYPATH
+    - /bin/cp -R Logs $DEPLOYPATH
+    - /bin/cp -R Rules $DEPLOYPATH
