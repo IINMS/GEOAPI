@@ -1,4 +1,18 @@
 {
+    "pers_username": {
+        "FieldType": "04_combo",
+        "displayField":"userName",
+        "Data":{
+            "allowBlank": false,
+            "width": "90%",
+    
+            "dbData": {
+              "call": "GetGeoserverUsers"
+          }
+      
+        } 
+       
+    },
     "pers_name": {
         "FieldType": "00_textfield",
         "Data": {

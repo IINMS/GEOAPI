@@ -1,5 +1,39 @@
 {
-    "working_team_code": {
+   
+  "working_team_work_type": {
+    "FieldType": "04_combo",
+    "displayField":"work_type",
+    "Data":{
+        "allowBlank": false
+  
+  
+    },
+    "datastore":{
+        "fields": ["work_type"],
+       "data":[
+       
+         {"type": ""},
+         {"type": ""},
+         {"type": ""}
+     
+       ]
+      
+    }
+   
+},
+"working_team_description": {
+  "FieldType": "00_working_textarea",
+  "Data": {
+    "allowBlank": true
+    }
+  },
+  "working_team_time": {
+    "FieldType": "04_comboTime",
+    "Data": {
+      "allowBlank": true
+      }
+    },
+  "working_team_code": {
         "FieldType": "00_Mytextfield",
         "Data": {
             "allowBlank": true
@@ -64,12 +98,12 @@
 
   }
 },
-"select_workers": {
+"working_team_selected_workers": {
   "FieldType": "05_ItemSelector",
 
   "Data": {
     "displayField": "Name",
-    "valueField": "Occupation",
+    "valueField": "id",
     "selected":"",
     "dbData": {
       "call": "GetPersonnel"
@@ -79,7 +113,7 @@
 
  
   "datastore":{
-    "fields": ["Name","Occupation"]
+    "fields": ["Name","Occupation","id"]
      
 }
 }

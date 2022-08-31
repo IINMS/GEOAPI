@@ -1,4 +1,15 @@
 {
+    "_meassurements": {
+        "FieldType": "03_meassurementButton",
+        "Data": {
+            "allowBlank": true,
+            "listenerID": "button_meassurementButton",
+            "rule_listeners": {
+                "click": "ShowMeassurements"
+            }
+             
+        }
+    },
     "_wmeter": {
         "FieldType": "06_MultiSelector",
         "Data": {

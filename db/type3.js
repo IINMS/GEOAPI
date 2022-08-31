@@ -244,7 +244,25 @@ Wmeter.init({
   wmeter_rel_sensors_ID: {
     type: Sequelize.INTEGER,
     allowNull: true
-  }/*,
+  },
+  wmeter_output: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  wmeter_number: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  wmeter_analog_measurement: {
+    type: Sequelize.INTEGER,
+    allowNull: true
+  },
+  wmeter_analog_measurement_date: {
+     type: Sequelize.DATE,
+     allowNull: true
+  }
+  
+  /*,
   wmeter_serial_number: {
     type: Sequelize.INTEGER,
     allowNull: true
@@ -269,9 +287,6 @@ Wmeter.init({
 
 
 
-
-
-
 );
 
 Wmeter.getpk=function(){
@@ -281,5 +296,64 @@ Wmeter.getpk=function(){
 Wmeter.getfk=function(){
   return "wmeter_type_ID";
 }
+
+
+class AnalogWmeter extends Model { }
+AnalogWmeter.init({
+  // attributes
+  analog_wmeter_ID: {
+    type: Sequelize.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+    allowNull: false
+  },
+  analog_wmeter_type_ID: {
+    type: Sequelize.TEXT,
+    allowNull: true
+  },
+  analog_wmeter_csection: {
+    type: Sequelize.DECIMAL,
+    allowNull: false
+  },
+
+  analog_wmeter_pmax: {
+    type: Sequelize.SMALLINT,
+    allowNull: false
+  },
+  analog_wmeter_part_number: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
+  analog_wmeter_serial_number: {
+    type: Sequelize.TEXT,
+    allowNull: true
+  },
+  analog_wmeter_measurement: {
+    type: Sequelize.TEXT,
+    allowNull: false
+  },
+
+}, {
+    sequelize,
+    modelName: 'type_analog_wmeter',
+    freezeTableName: true,
+    timestamps: false
+    // options
+  },
+
+
+
+
+
+
+);
+
+AnalogWmeter.getpk=function(){
+  return "analog_wmeter_ID";
+}
+
+AnalogWmeter.getfk=function(){
+  return "analog_wmeter_type_ID";
+}
  
-module.exports = { Tank, Stream, Drill, Struct, Wmeter };
+module.exports = { Tank, Stream, Drill, Struct, Wmeter,AnalogWmeter };

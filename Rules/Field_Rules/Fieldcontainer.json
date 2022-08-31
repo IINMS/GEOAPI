@@ -34,6 +34,17 @@
             }
         ]
     },
+    "meassurementButton": {
+        "xtype": "fieldcontainer",
+        "layout": "hbox",
+        "items": [
+            {
+                "xtype": "button",
+                "text": "click",
+                "id": "button_meassurementButton"
+            }
+        ]
+    },
     "elecEquipmentButton": {
         "xtype": "fieldcontainer",
         "layout": "hbox",
@@ -45,18 +56,27 @@
             }
         ]
     },
+    "taskNewExistingButton": {
+        "xtype": "fieldcontainer",
+        "layout": "hbox",
+        "items": [
+            {
+                "xtype": "button",
+                "text": "click",
+                "id": "button_taskNewExistingButton"
+            }
+        ]
+    },
     "coordsTextfield": {
         "xtype": "fieldcontainer",
-         "layout": "hbox",
+        "layout": "hbox",
         "items": [
             {
                 "xtype": "textfield"
-               
             },
             {
                 "xtype": "button",
                 "text": "click"
-                 
             }
         ]
     }

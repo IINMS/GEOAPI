@@ -68,7 +68,10 @@ FieldRules = function (name) {
             file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "Button.json");
             return file[FieldName];
 
+        case "08":
 
+            file = ReadFile.ReadJsonFile(FieldRulesPath + "/" + "Timefield.json");
+            return file[FieldName];
 
     };
 

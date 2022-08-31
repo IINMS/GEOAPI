@@ -1,0 +1,39 @@
+{
+    "analog_wmeter_type_ID": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true,
+            "hidden":true
+        }
+    },
+    "analog_wmeter_csection": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "analog_wmeter_pmax": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "analog_wmeter_part_number": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "analog_wmeter_serial_number": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "analog_wmeter_measurement": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    }
+}

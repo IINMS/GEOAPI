@@ -19,7 +19,8 @@ var privil = require('./Privil.js');
 //const sequelizeConn=connect.sequelizeConn;
 const sequelize=connect.sequelizeConn;
 const Model=Sequelize.Model;
-//admin.Tasks.sync({alter: true })
+//type3.Wmeter.sync({alter: true });
+
   /*
  type4.MetalBody.sync({force: true })
  type4.FlowMeter.sync({alter: true })
@@ -44,5 +45,10 @@ const Model=Sequelize.Model;
 //type4.FlowRegulator.sync({force:true})
  
 //privil.UserCat.sync({force:true})
+//type3.AnalogWmeter.sync({alter: true });
+
+//admin.WorkingTeam.sync({alter: true });
+
+//admin.WorkingTeam.sync({alter: true });
 
 module.exports = { privil};

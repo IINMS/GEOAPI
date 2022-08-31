@@ -16,6 +16,10 @@ Personnel.init(
       allowNull: false,
       autoIncrement: true
     },
+    pers_username: {
+      type: seq.TEXT,
+
+    },
     pers_name: {
       type: seq.TEXT,
 
@@ -67,6 +71,21 @@ WorkingTeam.init(
       allowNull: false,
       autoIncrement: true
     },
+    working_team_work_type: {
+      type: seq.TEXT,
+      //  allowNull: false
+
+    },
+    working_team_description: {
+      type: seq.TEXT,
+      //  allowNull: false
+
+    },
+    working_team_time: {
+      type: seq.TEXT,
+      //  allowNull: false
+
+    },
     working_team_type: {
       type: seq.TEXT,
       //  allowNull: false
@@ -80,8 +99,12 @@ WorkingTeam.init(
     working_team_code: {
       type: seq.TEXT
 
+    },
+    working_team_selected_workers: {
+      type: seq.ARRAY(seq.TEXT),
+      field: 'working_team_selected_workers',
+      allowNull: true
     }
-
 
   },
 
@@ -111,6 +134,11 @@ Tasks.init(
       allowNull: false,
       autoIncrement: true
     },
+    Task_working_team: {
+      type: seq.TEXT,
+      //  allowNull: false
+
+    },
     Task_comment: {
       type: seq.TEXT,
       //  allowNull: false
@@ -129,7 +157,7 @@ Tasks.init(
 
     },
     Task_file_path: {
-      type: seq.BOOLEAN
+      type: seq.TEXT
 
     }
 
