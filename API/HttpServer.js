@@ -84,7 +84,7 @@ app.post('/WriteToFs', function (req, res, next) {
 
       let path = file.path + "/" + file.folderName;
       //Wfile(path,res,buf)
-
+      console.log(path)
       try {
 
 

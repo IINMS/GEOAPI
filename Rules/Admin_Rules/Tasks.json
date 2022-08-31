@@ -1,4 +1,19 @@
 {
+  
+  "Task_working_team": {
+    "FieldType": "04_combo",
+    "displayField":"working_team_work_type",
+    "Data":{
+        "allowBlank": false,
+        "width": "90%",
+
+        "dbData": {
+          "call": "GetWorkingTeams"
+      }
+  
+    } 
+   
+},
   "Task_comment": {
     "FieldType": "00_textarea",
     "Data": {
@@ -35,16 +50,10 @@
       "allowBlank": true
     }
   },
-  "Task_file_path": {
-    "FieldType": "11_filefield",
-    "Data": {
-      "allowBlank": true
-    }
-  },
   "Task_repeat": {
     "FieldType": "03_checkboxfield",
     "Data": {
       "allowBlank": true
     }
-  }
+  } 
 }

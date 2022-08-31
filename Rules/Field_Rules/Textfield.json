@@ -1,12 +1,16 @@
 {
     "Mytextfield": {
-        "xtype": "textfield",
-        "id": "textfiled"
+        "xtype": "textfield"
+        
     },
     "textfield": {
         "xtype": "textfield",
         "width": "90%"
     },
+    "working_textarea": {
+        "xtype": "textareafield",
+        "grow": false
+     },
     "textarea": {
         "xtype": "textareafield",
         "grow": false,

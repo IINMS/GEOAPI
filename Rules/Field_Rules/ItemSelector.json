@@ -1,7 +1,7 @@
 {
   "ItemSelector": {
     "fieldLabel": "ItemSelector",
-    "name": "itemselector",
+    "name": "working_team_selected_workers",
     "imagePath": "../ux/images/",
     "id": "items",
     "allowBlank": true,

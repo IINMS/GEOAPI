@@ -1,0 +1,10 @@
+{
+    "timefield": {
+        "xtype": "timefield",
+        "format":"H:i",
+        "minValue": "00:30",
+        "maxValue": "06:00",
+        "increment": 30,
+        "submitFormat":"H:i"
+     }
+}

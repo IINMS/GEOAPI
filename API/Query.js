@@ -90,18 +90,20 @@ queryRouter.post('/modifycat', function (req, res, next) {
 queryRouter.post('/modify', function (req, res, next) {
 
 
-      console.log("DataObj ", req.body.DataObj);
+      console.log(" ", req.body);
 
-      console.log("DbName ", req.body.DbName);
-      console.log("ID ", req.body.ID);
-
-      console.log("type1 Duct", type1.Duct);
-
+ 
       var ID = req.body.ID;
 
       var obj = req.body.DataObj;
 
       var DbName = req.body.DbName;
+
+         console.log("DataObj ", obj);
+
+      console.log("DbName ",DbName);
+      console.log("ID ",  ID);
+
       var table = TableName.ORMTableName(DbName); //Returns the table "function" 
 
 
@@ -202,12 +204,13 @@ queryRouter.post('/addition', function (req, res, next) { //post request to db f
       var Ntoadd = JSON.parse(toadd);
       var pk = table.getpk();
 
-      //Ntoadd[pk] = id;
+      Ntoadd[pk] = id;
       console.log("DataObj ", Ntoadd);
 
 
       var DbName = req.body.DbName;
       var table = TableName.ORMTableName(DbName);
+      console.log("DataObj ", table);
 
       // Addition(Ntoadd, DbName, res);
       (async () => {
@@ -317,7 +320,7 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
 
    
 
-      if (DbName == "comm") {
+      /*if (DbName == "comm") {
             common.Comm.findAll(
                   {
 
@@ -361,7 +364,7 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
                               })
                   })
       }
-      else {
+      else {*/
 
             console.log("DbName ", DbName);
 
@@ -400,7 +403,7 @@ queryRouter.post('/show', function (req, res, next) { //post request to db for f
 
             })()
 
-      }
+      //}
 })
 
 

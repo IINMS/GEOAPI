@@ -51,6 +51,7 @@ TableRules = function (name) {
                   return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
 
             case "type_wmeter":
+            case "type_analog_wmeter":
                   return ReadFile.ReadJsonFile(typeRulesPath + "/" + name + ".json");
 
             case "type_evane":

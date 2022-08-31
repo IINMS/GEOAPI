@@ -138,6 +138,11 @@ ORMTableName = function (tableName) {
 
                   break;
 
+            case "type_analog_wmeter":
+                   ORMequivalent = type3.AnalogWmeter;
+      
+                  break;
+
             case "type_cpoint":
                   ORMequivalent = type2.Cpoint;
 

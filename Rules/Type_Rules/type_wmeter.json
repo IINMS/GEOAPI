@@ -41,5 +41,29 @@
         "Data": {
             "allowBlank": true
         }
+    },
+    "wmeter_output": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+      "wmeter_number": {
+        "FieldType": "02_numberfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_analog_measurement": {
+        "FieldType": "00_textfield",
+        "Data": {
+            "allowBlank": true
+        }
+    },
+    "wmeter_analog_measurement_date": {
+        "FieldType": "01_datefield",
+        "Data": {
+            "allowBlank": true
+        }
     }
 }
